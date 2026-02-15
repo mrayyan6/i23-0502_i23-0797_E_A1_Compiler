@@ -1,0 +1,45 @@
+## test3.lang - strings and escapes
+
+start
+{
+    declare Msg = $Hello World$;
+
+    declare Escaped = $Line\nBreak$;
+
+    declare Quoted = $Quote\"Here$;
+
+    declare Tabbed = $Col1\tCol2\tCol3$;
+
+    declare Backslash = $Path\\File$;
+
+    declare Multi = $This is
+a multi-line
+string literal$;
+
+    declare Cr = $Carriage\rReturn$;
+
+    output Msg;
+    output Escaped;
+    output Quoted;
+    output Tabbed;
+    output Backslash;
+    output Multi;
+    output Cr;
+
+    declare Ch1 = 'a';
+    declare Ch2 = 'Z';
+    declare Ch3 = '9';
+    declare Ch4 = '\t';
+    declare Ch5 = '\n';
+    declare Ch6 = '\\';
+    declare Ch7 = '\'';
+
+    output Ch1;
+    output Ch2;
+    output Ch3;
+    output Ch4;
+    output Ch5;
+    output Ch6;
+    output Ch7;
+}
+finish

@@ -1,0 +1,97 @@
+## test1.lang - all valid tokens
+
+start
+{
+    declare Count = 0;
+    declare Sum = +10;
+    declare Val = -5;
+    declare Pi = 3.14;
+    declare Big = 5.5e2;
+    declare Flag = true;
+    declare Done = false;
+
+    Count = Count + 1;
+    Sum = Sum - Val;
+    Val = Val * 2;
+    Sum = Sum / Count;
+    Count = Count % 3;
+    Val = Val ** 2;
+
+    Count += 1;
+    Sum -= 2;
+    Val *= 3;
+    Sum /= 4;
+    Count++;
+    Val--;
+
+    condition (Count == 0)
+    {
+        output $equal$;
+    }
+    else
+    {
+        output $not equal$;
+    }
+
+    condition (Count != Val)
+    {
+        output $different$;
+    }
+
+    condition (Count < Sum)
+    {
+        output $less$;
+    }
+
+    condition (Count > Val)
+    {
+        output $greater$;
+    }
+
+    condition (Count <= Sum)
+    {
+        output $less or equal$;
+    }
+
+    condition (Count >= Val)
+    {
+        output $greater or equal$;
+    }
+
+    condition (Flag && Done)
+    {
+        output $both true$;
+    }
+
+    condition (Flag || Done)
+    {
+        output $one true$;
+    }
+
+    condition (!Flag)
+    {
+        output $negated$;
+    }
+
+    declare Arr[10];
+    Arr[0] = 42;
+
+    input Count;
+    output Count;
+
+    loop (Count < 100)
+    {
+        Count = Count + 1;
+        condition (Count == 50)
+        {
+            break;
+        }
+        condition (Count == 25)
+        {
+            continue;
+        }
+    }
+
+    function Add(X, Y) : return X + Y;
+}
+finish

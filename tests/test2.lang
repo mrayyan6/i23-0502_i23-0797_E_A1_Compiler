@@ -1,0 +1,59 @@
+## test2.lang - complex expressions
+
+start
+{
+    declare Val1 = 100;
+    declare Count = 7;
+    declare Result = 0;
+
+    Result = (Val1 * 5.5e2) + (Count % 2) ** 3;
+    Result = Result / (Val1 - Count);
+    Result += (Count * Count) - Val1;
+
+    declare Temp = -3.141592;
+    Temp = Temp * +2.0e1;
+
+    loop (Count > 0)
+    {
+        output Count;
+        Count--;
+
+        condition (Count % 2 == 0)
+        {
+            continue;
+        }
+        condition (Count == 1)
+        {
+            break;
+        }
+    }
+
+    declare Max = 0;
+    condition (Val1 >= Count && Result > 0)
+    {
+        Max = Val1;
+    }
+    else
+    {
+        Max = Count;
+    }
+
+    condition (!(Max <= 0) || Result != Val1)
+    {
+        output Max;
+        output Result;
+    }
+
+    function Factorial(N) :
+    {
+        condition (N <= 1)
+        {
+            return 1;
+        }
+        return N * Factorial(N - 1);
+    }
+
+    Result = Factorial(Val1);
+    output Result;
+}
+finish

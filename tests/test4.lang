@@ -1,0 +1,35 @@
+## test4.lang - intentional lexical errors
+
+start
+{
+    ## Error 1: invalid identifier (starts lowercase)
+    declare invalidVar = 5;
+
+    ## Error 2: illegal character @
+    declare Count = 10 @ 5;
+
+    ## Error 3: malformed float (too many decimal digits)
+    declare Bad_float = 3.1234567;
+
+    ## Error 4: unclosed string literal
+    declare Broken = $this string never ends;
+
+    ## Error 5: invalid escape sequence in string
+    declare Esc = $bad \x escape$;
+
+    ## Error 6: identifier too long (over 31 chars)
+    declare Abcdefghijklmnopqrstuvwxyz_extra = 99;
+
+    ## Error 7: unclosed char literal
+    declare Ch = '
+
+    ## Error 8: empty char literal
+    declare Empty = '';
+
+    ## Error 9: multi-char inside char literal
+    declare Multi = 'ab';
+
+    ## Error 10: another illegal character
+    declare Tilde = ~5;
+}
+finish
