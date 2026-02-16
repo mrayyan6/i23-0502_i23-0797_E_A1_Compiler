@@ -38,7 +38,7 @@ start
     }
 
     ## final output
-    output $done$;
+    output "done";
 }
 finish
 ## end of file comment

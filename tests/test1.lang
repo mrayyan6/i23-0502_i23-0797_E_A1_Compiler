@@ -26,51 +26,51 @@ start
 
     condition (Count == 0)
     {
-        output $equal$;
+        output "equal";
     }
     else
     {
-        output $not equal$;
+        output "not equal";
     }
 
     condition (Count != Val)
     {
-        output $different$;
+        output "different";
     }
 
     condition (Count < Sum)
     {
-        output $less$;
+        output "less";
     }
 
     condition (Count > Val)
     {
-        output $greater$;
+        output "greater";
     }
 
     condition (Count <= Sum)
     {
-        output $less or equal$;
+        output "less or equal";
     }
 
     condition (Count >= Val)
     {
-        output $greater or equal$;
+        output "greater or equal";
     }
 
     condition (Flag && Done)
     {
-        output $both true$;
+        output "both true";
     }
 
     condition (Flag || Done)
     {
-        output $one true$;
+        output "one true";
     }
 
     condition (!Flag)
     {
-        output $negated$;
+        output "negated";
     }
 
     declare Arr[10];

@@ -108,11 +108,6 @@ public class ErrorHandler
         System.err.println("||                     LEXICAL ERRORS                         ||");
         System.err.println("||============================================================||");
 
-        errs.sort((a, b) -> {
-            if (a.type != b.type) return a.type.compareTo(b.type);
-            if (a.ln != b.ln) return a.ln - b.ln;
-            return a.col - b.col;
-        });
 
         for (Err e : errs) 
         {

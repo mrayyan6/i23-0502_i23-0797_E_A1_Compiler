@@ -63,13 +63,6 @@ public class TestRunner
                 both(System.out, file, "||                        TOKEN STREAM                        ||");
                 both(System.out, file, "||============================================================||");
 
-                tokens.sort((a, b) -> 
-                {
-                    if (a.type() != b.type()) return a.type().compareTo(b.type());
-                    if (a.ln() != b.ln()) return a.ln() - b.ln();
-                    return a.col() - b.col();
-                });
-
                 for (Token t : tokens) 
                 {
                     both(System.out, file, "  " + t);

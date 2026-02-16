@@ -12,10 +12,10 @@ start
     declare Bad_float = 3.1234567;
 
     ## Error 4: unclosed string literal
-    declare Broken = $this string never ends;
+    declare Broken = "this string never ends;
 
     ## Error 5: invalid escape sequence in string
-    declare Esc = $bad \x escape$;
+    declare Esc = "bad \x escape";
 
     ## Error 6: identifier too long (over 31 chars)
     declare Abcdefghijklmnopqrstuvwxyz_extra = 99;

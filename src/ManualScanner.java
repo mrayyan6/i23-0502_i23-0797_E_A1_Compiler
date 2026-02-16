@@ -194,8 +194,8 @@ public class ManualScanner
         int tokenCol  = column;
         char c = peek();
 
-        // string literal $ ... $
-        if (c == '$') 
+        // string literal " ..." 
+        if (c == '"') 
         {
             return str(tokenLine, tokenCol);
         }
@@ -408,14 +408,14 @@ public class ManualScanner
         return new Token(TokenType.INTEGER, sb.toString(), tokenLine, tokenCol);
     }
 
-    // scans string  $ ... $
+    // scans string  " ... "
     private Token str(int tokenLine, int tokenCol) 
     {
         StringBuilder sb = new StringBuilder();
-        advance(); //   opening $
-        sb.append('$');
+        advance(); //   opening "
+        sb.append('"');
 
-        while (!done() && peek() != '$') 
+        while (!done() && peek() != '"') 
         {
             if (peek() == '\n') 
             {
@@ -444,13 +444,13 @@ public class ManualScanner
             sb.append(advance());
         }
 
-        if (done() || !done() && peek() != '$')
+        if (done() || !done() && peek() != '"')
         {
             errors.noCloseStr(tokenLine, tokenCol, sb.toString());
             return new Token(TokenType.ERROR, sb.toString(), tokenLine, tokenCol);
         }
 
-        sb.append(advance()); //   closing $
+        sb.append(advance()); //   closing "
         return new Token(TokenType.STRING, sb.toString(), tokenLine, tokenCol);
     }
 
@@ -574,18 +574,6 @@ public class ManualScanner
         System.out.println("||============================================================|| ");
         System.out.println("||                        TOKEN STREAM                        || ");
         System.out.println("||============================================================|| ");
-
-        tokens.sort((a, b) -> {
-            if (a.type() != b.type()) 
-            {
-                return a.type().compareTo(b.type());
-            }
-            if (a.ln() != b.ln()) 
-            {
-                return a.ln() - b.ln();
-            }
-            return a.col() - b.col();
-        });
 
         for (Token tok : tokens) 
         {
