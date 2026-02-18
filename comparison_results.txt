@@ -1,0 +1,20 @@
+========== Running tests/test1.lang ==========
+[PASS] Output matches perfectly.
+
+
+========== Running tests/test2.lang ==========
+[PASS] Output matches perfectly.
+
+
+========== Running tests/test3.lang ==========
+[PASS] Output matches perfectly.
+
+
+========== Running tests/test4.lang ==========
+[PASS] Output matches perfectly.
+
+
+========== Running tests/test5.lang ==========
+[PASS] Output matches perfectly.
+
+

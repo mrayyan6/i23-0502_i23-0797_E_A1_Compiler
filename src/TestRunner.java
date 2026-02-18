@@ -1,17 +1,13 @@
+
 import java.io.IOException;
-import java.io.PrintStream;
-import java.io.FileOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.nio.charset.StandardCharsets;
 
+public class TestRunner {
 
-public class TestRunner 
-{
-
-    private static final String[] FILES = 
-    {
+    private static final String[] FILES = {
         "tests/test1.lang",
         "tests/test2.lang",
         "tests/test3.lang",
@@ -19,130 +15,78 @@ public class TestRunner
         "tests/test5.lang"
     };
 
-    private static final String OUT_FILE = "TestResults.txt";
-
-    public static void main(String[] args) 
-    {
-        PrintStream file = null;
-
-        try 
-        {
-            file = new PrintStream(new FileOutputStream(OUT_FILE));
-        } 
-        catch (IOException e) 
-        {
-            System.err.println("cant open " + OUT_FILE);
-            System.exit(1);
-        }
-
-        for (String path : FILES) 
-        {
-            String hdr = "--- Running " + path + " ---";
-            both(System.out, file, "\n" + hdr);
-
+    public static void main(String[] args) {
+        StringBuilder report = new StringBuilder();
+        
+        for (String path : FILES) {
+            report.append("========== Running " + path + " ==========\n");
+            
             String src;
-            try 
-            {
+            try {
                 src = new String(Files.readAllBytes(Paths.get(path)));
-            } 
-            catch (IOException e) 
-            {
-                String msg = "  ERROR: cant read " + path + " - " + e.getMessage();
-                both(System.out, file, msg);
-                both(System.out, file, "");
+            } catch (IOException e) {
+                report.append("Error reading file: " + path + "\n");
                 continue;
             }
 
-            try 
-            {
-                ManualScanner sc = new ManualScanner(src);
-                List<Token> tokens = sc.all();
+            // Run ManualScanner (Original) - EXPECTED CORRECT
+            ManualScanner s1 = new ManualScanner(src);
+            List<Token> t1 = s1.all();
 
-                // tokens
-                both(System.out, file, "||============================================================||");
-                both(System.out, file, "||                        TOKEN STREAM                        ||");
-                both(System.out, file, "||============================================================||");
+            // Run ManualScanner1 (New) - TO VERIFY
+            ManualScanner1 s2 = new ManualScanner1(src);
+            List<Token> t2 = s2.all();
 
-                for (Token t : tokens) 
-                {
-                    both(System.out, file, "  " + t);
-                }
-                both(System.out, file, "||============================================================||");
-                both(System.out, file, String.format("||  Total tokens: %-45d||", tokens.size()));
-                both(System.out, file, "||============================================================||");
-
-                // symbol table
-                both(System.out, file, "");
-                both(System.out, file, "||============================================================||");
-                both(System.out, file, "||                        SYMBOL TABLE                        ||");
-                both(System.out, file, "||============================================================||");
-                both(System.out, file, String.format("|| %-20s %-12s %-12s %-6s ||", "Name", "Type", "Scope", "Line"));
-                both(System.out, file, "||============================================================||");
-
-                List<Token> ids = tokens.stream()
-                    .filter(t -> t.type() == TokenType.IDENTIFIER)
-                    .collect(Collectors.toList());
-
-                if (ids.isEmpty()) 
-                {
-                    both(System.out, file, "||                     (empty table)                          ||");
-                } 
-                else 
-                {
-                    for (Token t : ids) 
-                    {
-                        SymbolTable.Entry e = sc.syms().find(t.lex());
-                        if (e != null) 
-                        {
-                            both(System.out, file, String.format("|| %-20s %-12s %-12s %-6d ||",
-                                    e.name(), e.type(), e.scope(), e.ln()));
-                        }
-                    }
-                }
-                both(System.out, file, "||============================================================||");
-
-                // errors
-                both(System.out, file, "");
-                if (!sc.errs().any()) 
-                {
-                    both(System.out, file, "[ErrorHandler] No lexical errors detected.");
-                } 
-                else 
-                {
-                    both(System.out, file, "||============================================================||");
-                    both(System.out, file, "||                     LEXICAL ERRORS                         ||");
-                    both(System.out, file, "||============================================================||");
-
-                    List<ErrorHandler.Err> errs = sc.errs().list();
-                    for (ErrorHandler.Err e : errs) 
-                    {
-                        both(System.out, file, "||  " + e);
-                    }
-
-                    both(System.out, file, "||============================================================||");
-                    both(System.out, file, String.format("||  Total errors: %-45d||", errs.size()));
-                    both(System.out, file, "||============================================================||");
-                }
-            } 
-            catch (Exception e) 
-            {
-                String msg = "  EXCEPTION on " + path + ": " + e.getMessage();
-                both(System.out, file, msg);
-                e.printStackTrace(file);
+            // Compare
+            boolean match = true;
+            if (t1.size() != t2.size()) {
+                report.append("[FAIL] Token count mismatch!\n");
+                report.append("Original: " + t1.size() + "\n");
+                report.append("New     : " + t2.size() + "\n");
+                match = false;
             }
 
-            both(System.out, file, "");
+            int min = Math.min(t1.size(), t2.size());
+            for (int i = 0; i < min; i++) {
+                Token tok1 = t1.get(i);
+                Token tok2 = t2.get(i);
+
+                if (tok1.type() != tok2.type() || !tok1.lex().equals(tok2.lex())) {
+                    report.append("[FAIL] Mismatch at index " + i + "\n");
+                    report.append("Original: " + tok1 + "\n");
+                    report.append("New     : " + tok2 + "\n");
+                    match = false;
+                    // Print context
+                    if (i > 0) report.append("   Prev: " + t1.get(i-1) + "\n");
+                    
+                    // Limit errors per file
+                    if (i > 5) {
+                        report.append("... too many errors ...\n");
+                        break;
+                    }
+                }
+            }
+
+            if (match) {
+                report.append("[PASS] Output matches perfectly.\n");
+            } else {
+                report.append("--------------------------------------------------\n");
+                report.append("Original Tokens (Partial):\n");
+                for(int i=0; i<Math.min(10, t1.size()); i++) report.append(t1.get(i) + "\n");
+                report.append("...\n");
+                report.append("New Tokens (Partial):\n");
+                for(int i=0; i<Math.min(10, t2.size()); i++) report.append(t2.get(i) + "\n");
+                report.append("--------------------------------------------------\n");
+            }
+            report.append("\n\n");
         }
-
-        both(System.out, file, "=== ALL TESTS COMPLETE ===");
-        both(System.out, file, "Results written to " + OUT_FILE);
-
-        file.close();
-    }
-
-    private static void both(PrintStream console, PrintStream file, String line) 
-    {
-        console.println(line);
-        file.println(line);
+        
+        try {
+            System.out.println(report.toString());
+            Files.write(Paths.get("comparison_results.txt"), report.toString().getBytes(StandardCharsets.UTF_8));
+            System.out.println("Comparison complete. Results written to comparison_results.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

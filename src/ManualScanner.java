@@ -294,7 +294,7 @@ public class ManualScanner
             return num(tokenLine, tokenCol, "");
         }
 
-        if (Character.isLetter(c) || c == '_') 
+        if ((Character.isLetter(c)) || c == '_') 
         {
             return word(tokenLine, tokenCol);
         }
