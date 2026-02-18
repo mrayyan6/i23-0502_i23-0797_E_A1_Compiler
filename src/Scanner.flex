@@ -1,234 +1,376 @@
-/* ============================================================================
- * JFlex Scanner Specification for Custom Programming Language
- * CS4031 - Compiler Construction Assignment 01
- * Part 2: JFlex Implementation
- * ============================================================================
- */
 
-/* ============================================================================
- * USER CODE SECTION
- * Imports and helper methods
- * ============================================================================
- */
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 %%
 
-/* ============================================================================
- * OPTIONS AND DECLARATIONS
- * ============================================================================
- */
-%class Yylex
-%public
+
+
+%class   Yylex
 %unicode
 %line
 %column
-%type Token
+%type    Token
 
-/* Enable character counting for accurate column tracking */
 %{
-    // List to store all tokens
-    private List<Token> tokens = new ArrayList<>();
+    /* ----- helpers accessible inside generated scanner ----- */
+    private ErrorHandler  errors  = new ErrorHandler();
+    private SymbolTable   symbols = new SymbolTable();
+
+    public  ErrorHandler  errs()  { return errors;  }
+    public  SymbolTable   syms()  { return symbols;  }
+
     
-    // Statistics counters
-    private int tokenCount = 0;
-    private int commentCount = 0;
+    private int ln()  { return yyline + 1; }
+    /** convenience: 1-based column */
+    private int col() { return yycolumn + 1; }
+
     
-    // Helper method to get current line number (1-indexed)
-    private int getLine() {
-        return yyline + 1;
+    private Token tok(TokenType t) {
+        return new Token(t, yytext(), ln(), col());
     }
-    
-    // Helper method to get current column number (1-indexed)
-    private int getColumn() {
-        return yycolumn + 1;
+    private Token tok(TokenType t, String lex) {
+        return new Token(t, lex, ln(), col());
     }
-    
-    // Create and store token
-    private Token createToken(TokenType type, String lexeme) {
-        Token token = new Token(type, lexeme, getLine(), getColumn());
-        tokens.add(token);
-        tokenCount++;
-        return token;
-    }
-    
-    // Get all tokens
-    public List<Token> getTokens() {
-        return tokens;
-    }
-    
-    // Get token count
-    public int getTokenCount() {
-        return tokenCount;
-    }
-    
-    // Get comment count
-    public int getCommentCount() {
-        return commentCount;
+
+    /** register identifier in symbol table */
+    private void addSym(String name) {
+        symbols.add(name, "N/A", "Global", ln());
     }
 %}
 
-/* ============================================================================
- * MACRO DEFINITIONS
- * Pattern definitions for better readability and reusability
- * ============================================================================
- */
+/* ---------- Macros ---------- */
 
-/* Basic Components */
-DIGIT           = [0-9]
-UPPERCASE       = [A-Z]
-LOWERCASE       = [a-z]
-LETTER          = [A-Za-z]
-UNDERSCORE      = "_"
+DIGIT       = [0-9]
+UPPER       = [A-Z]
+LOWER       = [a-z]
+LETTER      = [A-Za-z]
+ID_TAIL     = [a-z0-9_]
+WHITESPACE  = [ \t\r]
+NEWLINE     = \n
 
-/* Whitespace */
-WHITESPACE      = [ \t\r\n]+
-NEWLINE         = \r|\n|\r\n
+/* ---------- States ---------- */
+%state STRING_STATE
+%state CHAR_STATE
+%state MULTICOMMENT
 
-/* Integer Literal: [+-]?[0-9]+ */
-INTEGER         = [+\-]?{DIGIT}+
+%{
+    /* ----- string / char accumulators ----- */
+    private StringBuilder strBuf;
+    private int           strLine;
+    private int           strCol;
+    private boolean       strHasError;
 
-/* Floating-Point Literal: [+-]?[0-9]+\.[0-9]{1,6}([eE][+-]?[0-9]+)? */
-FLOAT           = [+\-]?{DIGIT}+"."{DIGIT}{1,6}([eE][+\-]?{DIGIT}+)?
+    private StringBuilder chrBuf;
+    private int           chrLine;
+    private int           chrCol;
+    private int           chrCount;        /* characters inside the quotes */
+    private boolean       chrHasEscape;
+    private boolean       chrHasError;
 
-/* Identifier: [A-Z][a-z0-9_]{0,30} */
-IDENTIFIER      = {UPPERCASE}({LOWERCASE}|{DIGIT}|{UNDERSCORE}){0,30}
+    /* ----- multi-line comment tracking ----- */
+    private int cmtLine;
+    private int cmtCol;
+%}
 
-/* String Literal: "([ ^"\\\n]|\\["\\ntr])*" */
-STRING_CHAR     = [^\"\\\n]
-ESCAPE_SEQ      = \\[\"\\\ntr]
-STRING          = \"({STRING_CHAR}|{ESCAPE_SEQ})*\"
-
-/* Character Literal: '([ ^'\\\n]|\\['\\ntr])' */
-CHAR_LITERAL    = '([^'\\\n]|\\['\\\ntr])'
-
-/* Comments */
-SINGLE_COMMENT  = "##"[^\n]*
-MULTI_COMMENT   = "#*"([^*]|\*+[^*#])*\*+"#"
-
-/* ============================================================================
- * LEXICAL RULES
- * Pattern matching rules in priority order (CRITICAL for avoiding ambiguity)
- * ============================================================================
- */
 %%
 
-/* ----------------------------------------------------------------------------
- * 1. MULTI-LINE COMMENTS (Highest Priority)
- * ---------------------------------------------------------------------------- */
-{MULTI_COMMENT}     { 
-                        commentCount++; 
-                        /* Skip - don't return token */ 
-                    }
+/* ===================================================================
+ *  LEXICAL RULES
+ * =================================================================== */
 
-/* ----------------------------------------------------------------------------
- * 2. SINGLE-LINE COMMENTS
- * ---------------------------------------------------------------------------- */
-{SINGLE_COMMENT}    { 
-                        commentCount++; 
-                        /* Skip - don't return token */ 
-                    }
+/* -------- Multi-line comments  #| ... |# -------- */
+<YYINITIAL> {
+    "#|"    {
+                cmtLine = ln(); cmtCol = col();
+                yybegin(MULTICOMMENT);
+            }
+}
 
-/* ----------------------------------------------------------------------------
- * 3. MULTI-CHARACTER OPERATORS (Before single-character ones)
- * ---------------------------------------------------------------------------- */
-"**"                { return createToken(TokenType.POWER, yytext()); }
-"=="                { return createToken(TokenType.EQUAL, yytext()); }
-"!="                { return createToken(TokenType.NOT_EQUAL, yytext()); }
-"<="                { return createToken(TokenType.LESS_EQUAL, yytext()); }
-">="                { return createToken(TokenType.GREATER_EQUAL, yytext()); }
-"&&"                { return createToken(TokenType.LOGICAL_AND, yytext()); }
-"||"                { return createToken(TokenType.LOGICAL_OR, yytext()); }
-"++"                { return createToken(TokenType.INCREMENT, yytext()); }
-"--"                { return createToken(TokenType.DECREMENT, yytext()); }
-"+="                { return createToken(TokenType.PLUS_ASSIGN, yytext()); }
-"-="                { return createToken(TokenType.MINUS_ASSIGN, yytext()); }
-"*="                { return createToken(TokenType.MULT_ASSIGN, yytext()); }
-"/="                { return createToken(TokenType.DIV_ASSIGN, yytext()); }
+<MULTICOMMENT> {
+    "|#"        { yybegin(YYINITIAL); }
+    [^|]*       { /* consume */ }
+    "|"         { /* consume lone pipe */ }
+    <<EOF>>     {
+                    errors.noCloseCmnt(cmtLine, cmtCol, "#|...");
+                    yybegin(YYINITIAL);
+                    return tok(TokenType.EOF, "EOF");
+                }
+}
 
-/* ----------------------------------------------------------------------------
- * 4. KEYWORDS (Case-Sensitive, Exact Match)
- * Must be checked before identifiers to avoid keyword-identifier conflict
- * ---------------------------------------------------------------------------- */
-"start"             { return createToken(TokenType.START, yytext()); }
-"finish"            { return createToken(TokenType.FINISH, yytext()); }
-"loop"              { return createToken(TokenType.LOOP, yytext()); }
-"condition"         { return createToken(TokenType.CONDITION, yytext()); }
-"declare"           { return createToken(TokenType.DECLARE, yytext()); }
-"output"            { return createToken(TokenType.OUTPUT, yytext()); }
-"input"             { return createToken(TokenType.INPUT, yytext()); }
-"function"          { return createToken(TokenType.FUNCTION, yytext()); }
-"return"            { return createToken(TokenType.RETURN, yytext()); }
-"break"             { return createToken(TokenType.BREAK, yytext()); }
-"continue"          { return createToken(TokenType.CONTINUE, yytext()); }
-"else"              { return createToken(TokenType.ELSE, yytext()); }
+/* -------- Single-line comments  /
+<YYINITIAL> {
+    "##"[^\n]*  { /* skip */ }
+}
 
-/* ----------------------------------------------------------------------------
- * 5. BOOLEAN LITERALS (Before identifiers)
- * ---------------------------------------------------------------------------- */
-"true"              { return createToken(TokenType.BOOLEAN, yytext()); }
-"false"             { return createToken(TokenType.BOOLEAN, yytext()); }
+/* -------- Whitespace -------- */
+<YYINITIAL> {
+    {WHITESPACE}+   { /* skip */ }
+    {NEWLINE}       { /* skip, line tracking automatic */ }
+}
 
-/* ----------------------------------------------------------------------------
- * 6. IDENTIFIERS
- * Must be after keywords and booleans
- * ---------------------------------------------------------------------------- */
-{IDENTIFIER}        { return createToken(TokenType.IDENTIFIER, yytext()); }
+/* -------- String literals  /
+<YYINITIAL> {
+    \"  {
+            strBuf = new StringBuilder("\"");
+            strLine = ln(); strCol = col();
+            strHasError = false;
+            yybegin(STRING_STATE);
+        }
+}
 
-/* ----------------------------------------------------------------------------
- * 7. FLOATING-POINT LITERALS (Before integers - longest match)
- * ---------------------------------------------------------------------------- */
-{FLOAT}             { return createToken(TokenType.FLOAT, yytext()); }
+<STRING_STATE> {
+    /* valid escape sequences */
+    \\\"    { strBuf.append("\\\""); }
+    \\\\    { strBuf.append("\\\\"); }
+    \\n     { strBuf.append("\\n");  }
+    \\t     { strBuf.append("\\t");  }
+    \\r     { strBuf.append("\\r");  }
 
-/* ----------------------------------------------------------------------------
- * 8. INTEGER LITERALS
- * ---------------------------------------------------------------------------- */
-{INTEGER}           { return createToken(TokenType.INTEGER, yytext()); }
+    /* invalid escape sequence */
+    \\.     {
+                errors.badEsc(strLine, strCol, yytext());
+                strBuf.append(yytext());
+                strHasError = true;
+            }
 
-/* ----------------------------------------------------------------------------
- * 9. STRING AND CHARACTER LITERALS
- * ---------------------------------------------------------------------------- */
-{STRING}            { return createToken(TokenType.STRING, yytext()); }
-{CHAR_LITERAL}      { return createToken(TokenType.CHAR, yytext()); }
+    /* closing quote */
+    \"      {
+                strBuf.append("\"");
+                yybegin(YYINITIAL);
+                if (strHasError)
+                    return new Token(TokenType.ERROR, strBuf.toString(), strLine, strCol);
+                return new Token(TokenType.STRING, strBuf.toString(), strLine, strCol);
+            }
 
-/* ----------------------------------------------------------------------------
- * 10. SINGLE-CHARACTER OPERATORS
- * ---------------------------------------------------------------------------- */
-"+"                 { return createToken(TokenType.PLUS, yytext()); }
-"-"                 { return createToken(TokenType.MINUS, yytext()); }
-"*"                 { return createToken(TokenType.MULTIPLY, yytext()); }
-"/"                 { return createToken(TokenType.DIVIDE, yytext()); }
-"%"                 { return createToken(TokenType.MODULO, yytext()); }
-"<"                 { return createToken(TokenType.LESS_THAN, yytext()); }
-">"                 { return createToken(TokenType.GREATER_THAN, yytext()); }
-"!"                 { return createToken(TokenType.LOGICAL_NOT, yytext()); }
-"="                 { return createToken(TokenType.ASSIGN, yytext()); }
+    /* newline inside string -> unclosed */
+    \n      {
+                errors.noCloseStr(strLine, strCol, strBuf.toString());
+                yybegin(YYINITIAL);
+                return new Token(TokenType.ERROR, strBuf.toString(), strLine, strCol);
+            }
 
-/* ----------------------------------------------------------------------------
- * 11. PUNCTUATORS
- * ---------------------------------------------------------------------------- */
-"("                 { return createToken(TokenType.LPAREN, yytext()); }
-")"                 { return createToken(TokenType.RPAREN, yytext()); }
-"{"                 { return createToken(TokenType.LBRACE, yytext()); }
-"}"                 { return createToken(TokenType.RBRACE, yytext()); }
-"["                 { return createToken(TokenType.LBRACKET, yytext()); }
-"]"                 { return createToken(TokenType.RBRACKET, yytext()); }
-","                 { return createToken(TokenType.COMMA, yytext()); }
-";"                 { return createToken(TokenType.SEMICOLON, yytext()); }
-":"                 { return createToken(TokenType.COLON, yytext()); }
+    /* any other character */
+    [^\"\\\n]+  { strBuf.append(yytext()); }
 
-/* ----------------------------------------------------------------------------
- * 12. WHITESPACE (Skip but track for line/column numbers)
- * ---------------------------------------------------------------------------- */
-{WHITESPACE}        { /* Skip whitespace - JFlex automatically tracks line/col */ }
+    /* EOF inside string */
+    <<EOF>> {
+                errors.noCloseStr(strLine, strCol, strBuf.toString());
+                yybegin(YYINITIAL);
+                return new Token(TokenType.ERROR, strBuf.toString(), strLine, strCol);
+            }
+}
 
-/* ----------------------------------------------------------------------------
- * ERROR HANDLING
- * Catch any unrecognized characters
- * ---------------------------------------------------------------------------- */
-.                   { return createToken(TokenType.ERROR, yytext()); }
+/* -------- Character literals  */
+<YYINITIAL> {
+    \'  {
+            chrBuf = new StringBuilder("'");
+            chrLine = ln(); chrCol = col();
+            chrCount = 0;
+            chrHasEscape = false;
+            chrHasError = false;
+            yybegin(CHAR_STATE);
+        }
+}
 
-/* End of File */
-<<EOF>>             { return createToken(TokenType.EOF, "EOF"); }
+<CHAR_STATE> {
+    /* valid escape sequences */
+    \\\'    { chrBuf.append("\\'");  chrCount++; chrHasEscape = true; }
+    \\\\    { chrBuf.append("\\\\"); chrCount++; chrHasEscape = true; }
+    \\n     { chrBuf.append("\\n");  chrCount++; chrHasEscape = true; }
+    \\t     { chrBuf.append("\\t");  chrCount++; chrHasEscape = true; }
+    \\r     { chrBuf.append("\\r");  chrCount++; chrHasEscape = true; }
+
+    /* invalid escape */
+    \\.     {
+                errors.badEsc(chrLine, chrCol, yytext());
+                chrBuf.append(yytext());
+                chrCount++;
+                chrHasError = true;
+            }
+
+    /* closing quote */
+    \'      {
+                yybegin(YYINITIAL);
+                if (chrCount == 0) {
+                    /* empty char literal '' */
+                    errors.badLit(chrLine, chrCol, "''", "Empty character literal.");
+                    return new Token(TokenType.ERROR, "''", chrLine, chrCol);
+                }
+                if (chrCount > 1) {
+                    chrBuf.append("'");
+                    errors.badLit(chrLine, chrCol, chrBuf.toString(),
+                            "Character literal contains more than one character.");
+                    return new Token(TokenType.ERROR, chrBuf.toString(), chrLine, chrCol);
+                }
+                chrBuf.append("'");
+                if (chrHasError)
+                    return new Token(TokenType.ERROR, chrBuf.toString(), chrLine, chrCol);
+                return new Token(TokenType.CHAR, chrBuf.toString(), chrLine, chrCol);
+            }
+
+    /* newline inside char -> unclosed */
+    \n      {
+                errors.noCloseChr(chrLine, chrCol, chrBuf.toString());
+                yybegin(YYINITIAL);
+                return new Token(TokenType.ERROR, chrBuf.toString(), chrLine, chrCol);
+            }
+
+    /* any other single character */
+    [^\'\\\n]   { chrBuf.append(yytext()); chrCount++; }
+
+    /* EOF inside char */
+    <<EOF>> {
+                errors.noCloseChr(chrLine, chrCol, chrBuf.toString());
+                yybegin(YYINITIAL);
+                return new Token(TokenType.ERROR, chrBuf.toString(), chrLine, chrCol);
+            }
+}
+
+
+/* ==============================================
+ *  YYINITIAL rules  (main scanning state)
+ * ============================================== */
+<YYINITIAL> {
+
+    /* -------- Multi-character operators (checked first) -------- */
+    "++"    { return tok(TokenType.INCREMENT);    }
+    "--"    { return tok(TokenType.DECREMENT);    }
+    "**"    { return tok(TokenType.POWER);        }
+    "=="    { return tok(TokenType.EQUAL);        }
+    "!="    { return tok(TokenType.NOT_EQUAL);    }
+    "<="    { return tok(TokenType.LESS_EQUAL);   }
+    ">="    { return tok(TokenType.GREATER_EQUAL);}
+    "&&"    { return tok(TokenType.LOGICAL_AND);  }
+    "||"    { return tok(TokenType.LOGICAL_OR);   }
+    "+="    { return tok(TokenType.PLUS_ASSIGN);  }
+    "-="    { return tok(TokenType.MINUS_ASSIGN); }
+    "*="    { return tok(TokenType.MULT_ASSIGN);  }
+    "/="    { return tok(TokenType.DIV_ASSIGN);   }
+
+    /* -------- Signed numbers: +digits or -digits -------- */
+    "+" {DIGIT}+ "." {DIGIT}{1,6} ([eE][+-]?{DIGIT}+)?  {
+                return tok(TokenType.FLOAT);
+            }
+    "-" {DIGIT}+ "." {DIGIT}{1,6} ([eE][+-]?{DIGIT}+)?  {
+                return tok(TokenType.FLOAT);
+            }
+    "+" {DIGIT}+ "." {DIGIT}{7}  {
+                errors.badLit(ln(), col(), yytext(),
+                        "Float literal exceeds maximum of 6 decimal digits.");
+                return tok(TokenType.ERROR);
+            }
+    "-" {DIGIT}+ "." {DIGIT}{7}  {
+                errors.badLit(ln(), col(), yytext(),
+                        "Float literal exceeds maximum of 6 decimal digits.");
+                return tok(TokenType.ERROR);
+            }
+    "+" {DIGIT}+    { return tok(TokenType.INTEGER); }
+    "-" {DIGIT}+    { return tok(TokenType.INTEGER); }
+
+    /* -------- Single-character operators (after multi-char) -------- */
+    "+"     { return tok(TokenType.PLUS);         }
+    "-"     { return tok(TokenType.MINUS);        }
+    "*"     { return tok(TokenType.MULTIPLY);     }
+    "/"     { return tok(TokenType.DIVIDE);       }
+    "%"     { return tok(TokenType.MODULO);       }
+    "="     { return tok(TokenType.ASSIGN);       }
+    "!"     { return tok(TokenType.LOGICAL_NOT);  }
+    "<"     { return tok(TokenType.LESS_THAN);    }
+    ">"     { return tok(TokenType.GREATER_THAN); }
+
+    /* -------- Punctuators -------- */
+    "("     { return tok(TokenType.LPAREN);    }
+    ")"     { return tok(TokenType.RPAREN);    }
+    "{"     { return tok(TokenType.LBRACE);    }
+    "}"     { return tok(TokenType.RBRACE);    }
+    "["     { return tok(TokenType.LBRACKET);  }
+    "]"     { return tok(TokenType.RBRACKET);  }
+    ","     { return tok(TokenType.COMMA);     }
+    ";"     { return tok(TokenType.SEMICOLON); }
+    ":"     { return tok(TokenType.COLON);     }
+
+    /* -------- Unsigned float literals -------- */
+    {DIGIT}+ "." {DIGIT}{1,6} ([eE][+-]?{DIGIT}+)?  {
+                return tok(TokenType.FLOAT);
+            }
+    /* float with too many decimals */
+    {DIGIT}+ "." {DIGIT}{7}  {
+                errors.badLit(ln(), col(), yytext(),
+                        "Float literal exceeds maximum of 6 decimal digits.");
+                return tok(TokenType.ERROR);
+            }
+    /* float with incomplete exponent */
+    {DIGIT}+ "." {DIGIT}{1,6} [eE][+-]?  {
+                errors.badLit(ln(), col(), yytext(),
+                        "Exponent part of float is incomplete.");
+                return tok(TokenType.ERROR);
+            }
+
+    /* -------- Unsigned integer literals -------- */
+    {DIGIT}+    { return tok(TokenType.INTEGER); }
+
+    /* -------- Keywords (exact match, case-sensitive) -------- */
+    "start"     { return tok(TokenType.START);     }
+    "finish"    { return tok(TokenType.FINISH);    }
+    "loop"      { return tok(TokenType.LOOP);      }
+    "condition" { return tok(TokenType.CONDITION);  }
+    "declare"   { return tok(TokenType.DECLARE);   }
+    "output"    { return tok(TokenType.OUTPUT);    }
+    "input"     { return tok(TokenType.INPUT);     }
+    "function"  { return tok(TokenType.FUNCTION);  }
+    "return"    { return tok(TokenType.RETURN);    }
+    "break"     { return tok(TokenType.BREAK);     }
+    "continue"  { return tok(TokenType.CONTINUE);  }
+    "else"      { return tok(TokenType.ELSE);      }
+
+    /* -------- Boolean literals -------- */
+    "true"      { return tok(TokenType.BOOLEAN);   }
+    "false"     { return tok(TokenType.BOOLEAN);   }
+
+    /* -------- Valid identifiers: [A-Z][a-z0-9_]{0,30} -------- */
+    {UPPER}{ID_TAIL}{0,30}  {
+                String id = yytext();
+                addSym(id);
+                return tok(TokenType.IDENTIFIER);
+            }
+
+    /* -------- Identifier too long -------- */
+    {UPPER}{ID_TAIL}{31}  {
+                errors.longId(ln(), col(), yytext());
+                return tok(TokenType.ERROR);
+            }
+
+    /* -------- Invalid identifier (starts lowercase or underscore, then letters/digits) -------- */
+    ({LOWER} | "_") ({LETTER} | {DIGIT} | "_")*  {
+                errors.log("Invalid Identifier", ln(), col(), yytext(),
+                        "Identifiers must start with an uppercase letter [A-Z].");
+                return tok(TokenType.ERROR);
+            }
+
+    /* -------- Invalid identifier (starts uppercase but has uppercase after first char) -------- */
+    {UPPER} ({LETTER} | {DIGIT} | "_")*  {
+                errors.log("Invalid Identifier", ln(), col(), yytext(),
+                        "Identifiers may only contain lowercase letters, digits, and underscores after the first character.");
+                return tok(TokenType.ERROR);
+            }
+
+    /* -------- Single & or | (invalid) -------- */
+    "&"     {
+                errors.badChar(ln(), col(), "&");
+                return tok(TokenType.ERROR, "&");
+            }
+    "|"     {
+                errors.badChar(ln(), col(), "|");
+                return tok(TokenType.ERROR, "|");
+            }
+
+    /* -------- Catch-all: any other character is invalid -------- */
+    .       {
+                errors.badChar(ln(), col(), yytext());
+                return tok(TokenType.ERROR);
+            }
+}
+
+/* -------- EOF -------- */
+<<EOF>>     { return tok(TokenType.EOF, "EOF"); }

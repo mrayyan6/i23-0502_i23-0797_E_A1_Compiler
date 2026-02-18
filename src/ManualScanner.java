@@ -412,6 +412,7 @@ public class ManualScanner
     private Token str(int tokenLine, int tokenCol) 
     {
         StringBuilder sb = new StringBuilder();
+        boolean hasError = false;
         advance(); //   opening "
         sb.append('"');
 
@@ -419,10 +420,9 @@ public class ManualScanner
         {
             if (peek() == '\n') 
             {
-                // multi-line strings
-                sb.append(advance());
-                newline();
-                continue;
+                // newline inside string = unclosed string
+                errors.noCloseStr(tokenLine, tokenCol, sb.toString());
+                return new Token(TokenType.ERROR, sb.toString(), tokenLine, tokenCol);
             }
             if (peek() == '\\') 
             {
@@ -437,6 +437,7 @@ public class ManualScanner
                     default:
                         errors.badEsc(tokenLine, tokenCol, "\\" + esc);
                         sb.append(advance());
+                        hasError = true;
                         break;
                 }
                 continue;
@@ -451,6 +452,10 @@ public class ManualScanner
         }
 
         sb.append(advance()); //   closing "
+        if (hasError)
+        {
+            return new Token(TokenType.ERROR, sb.toString(), tokenLine, tokenCol);
+        }
         return new Token(TokenType.STRING, sb.toString(), tokenLine, tokenCol);
     }
 

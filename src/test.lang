@@ -1,0 +1,44 @@
+## test5.lang - comments
+
+## single-line comment above code
+start
+{
+    ## declaring a variable
+    declare Count = 0;
+
+    #| 
+        This is a multi-line comment.
+        It spans several lines.
+        The scanner should skip all of this.
+    |#
+
+    Count = Count + 1;
+
+    ## another single-line comment
+    output Count;    ## inline comment after code
+
+    #| nested-style comment: still non-nested |#
+
+    declare Val = 42;    ## value declaration
+
+    #|
+        Comment between statements.
+        Should not affect tokenization.
+    |#
+
+    loop (Count < Val)
+    {
+        Count++;
+        ## skip even numbers
+        condition (Count % 2 == 0)
+        {
+            continue;
+        }
+        output Count;
+    }
+
+    ## final output
+    output "done";
+}
+finish
+## end of file comment

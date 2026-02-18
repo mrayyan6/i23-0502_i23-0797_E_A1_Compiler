@@ -11,6 +11,7 @@ public class ManualScanner1
     private int    column;
     private int    startLine;
     private int    startCol;
+    private boolean stringHasError;
     
     private static final Map<String, TokenType> KEYWORDS = new HashMap<>();
     
@@ -107,6 +108,7 @@ public class ManualScanner1
                         state = 30; 
                         consume(); 
                         lexeme.append('"');
+                        stringHasError = false;
                         break;
                     }
 
@@ -359,6 +361,10 @@ public class ManualScanner1
                     {
                          return new Token(TokenType.ERROR, lexeme.toString(), startLine, startCol);
                     }
+                    if (c == '\n') 
+                    {
+                        return new Token(TokenType.ERROR, lexeme.toString(), startLine, startCol);
+                    }
                     if (c == '\\') 
                     {
                         state = 31; 
@@ -370,6 +376,10 @@ public class ManualScanner1
                     {
                         lexeme.append('"');
                         consume();
+                        if (stringHasError) 
+                        {
+                            return new Token(TokenType.ERROR, lexeme.toString(), startLine, startCol);
+                        }
                         return new Token(TokenType.STRING, lexeme.toString(), startLine, startCol);
                     }
                     lexeme.append(c);
@@ -378,6 +388,10 @@ public class ManualScanner1
                 
                 case 31: 
                     if (pos >= input.length()) return new Token(TokenType.ERROR, lexeme.toString(), startLine, startCol);
+                    if (c != '"' && c != '\\' && c != 'n' && c != 't' && c != 'r') 
+                    {
+                        stringHasError = true;
+                    }
                     lexeme.append(c);
                     consume();
                     state = 30; 
@@ -393,11 +407,7 @@ public class ManualScanner1
                              return new Token(TokenType.ERROR, lexeme.toString(), startLine, startCol);
                          } 
                          lexeme.append(c); consume();
-                         String val = lexeme.toString();
-                         if (val.length() > 4)
-                             return new Token(TokenType.ERROR, val, startLine, startCol);
-                             
-                         return new Token(TokenType.CHAR, val, startLine, startCol);
+                         return new Token(TokenType.CHAR, lexeme.toString(), startLine, startCol);
                      }
                      if (c == '\\') 
                      {
@@ -410,13 +420,35 @@ public class ManualScanner1
                          return new Token(TokenType.ERROR, lexeme.toString(), startLine, startCol);
                      }
                      lexeme.append(c); consume();
+                     state = 62;
                      break;
 
                  case 61:
                      if (pos >= input.length()) return new Token(TokenType.ERROR, lexeme.toString(), startLine, startCol);
                      lexeme.append(c); consume();
-                     state = 60; 
+                     state = 62; 
                      break;
+
+                 case 62: // expect closing '
+                     if (c == '\'') 
+                     {
+                         lexeme.append(c); consume();
+                         return new Token(TokenType.CHAR, lexeme.toString(), startLine, startCol);
+                     }
+                     // multi-char or unclosed char literal
+                     while (pos < input.length()) 
+                     {
+                         char ch = input.charAt(pos);
+                         if (ch == '\'' || ch == '\n') break;
+                         lexeme.append(ch);
+                         consume();
+                     }
+                     if (pos < input.length() && input.charAt(pos) == '\'') 
+                     {
+                         lexeme.append('\'');
+                         consume();
+                     }
+                     return new Token(TokenType.ERROR, lexeme.toString(), startLine, startCol);
 
                  case 40:
                     String current = lexeme.toString();
