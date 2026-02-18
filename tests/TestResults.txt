@@ -1,0 +1,825 @@
+
+--- Running tests/test1.lang ---
+||============================================================|| 
+||                        TOKEN STREAM                        || 
+||============================================================|| 
+  <START, "start", Line: 3, Col: 1>
+  <LBRACE, "{", Line: 4, Col: 1>
+  <DECLARE, "declare", Line: 5, Col: 5>
+  <IDENTIFIER, "Count", Line: 5, Col: 13>
+  <ASSIGN, "=", Line: 5, Col: 19>
+  <INTEGER, "0", Line: 5, Col: 21>
+  <SEMICOLON, ";", Line: 5, Col: 22>
+  <DECLARE, "declare", Line: 6, Col: 5>
+  <IDENTIFIER, "Sum", Line: 6, Col: 13>
+  <ASSIGN, "=", Line: 6, Col: 17>
+  <INTEGER, "+10", Line: 6, Col: 19>
+  <SEMICOLON, ";", Line: 6, Col: 22>
+  <DECLARE, "declare", Line: 7, Col: 5>
+  <IDENTIFIER, "Val", Line: 7, Col: 13>
+  <ASSIGN, "=", Line: 7, Col: 17>
+  <INTEGER, "-5", Line: 7, Col: 19>
+  <SEMICOLON, ";", Line: 7, Col: 21>
+  <DECLARE, "declare", Line: 8, Col: 5>
+  <IDENTIFIER, "Pi", Line: 8, Col: 13>
+  <ASSIGN, "=", Line: 8, Col: 16>
+  <FLOAT, "3.14", Line: 8, Col: 18>
+  <SEMICOLON, ";", Line: 8, Col: 22>
+  <DECLARE, "declare", Line: 9, Col: 5>
+  <IDENTIFIER, "Big", Line: 9, Col: 13>
+  <ASSIGN, "=", Line: 9, Col: 17>
+  <FLOAT, "5.5e2", Line: 9, Col: 19>
+  <SEMICOLON, ";", Line: 9, Col: 24>
+  <DECLARE, "declare", Line: 10, Col: 5>
+  <IDENTIFIER, "Flag", Line: 10, Col: 13>
+  <ASSIGN, "=", Line: 10, Col: 18>
+  <BOOLEAN, "true", Line: 10, Col: 20>
+  <SEMICOLON, ";", Line: 10, Col: 24>
+  <DECLARE, "declare", Line: 11, Col: 5>
+  <IDENTIFIER, "Done", Line: 11, Col: 13>
+  <ASSIGN, "=", Line: 11, Col: 18>
+  <BOOLEAN, "false", Line: 11, Col: 20>
+  <SEMICOLON, ";", Line: 11, Col: 25>
+  <IDENTIFIER, "Count", Line: 13, Col: 5>
+  <ASSIGN, "=", Line: 13, Col: 11>
+  <IDENTIFIER, "Count", Line: 13, Col: 13>
+  <PLUS, "+", Line: 13, Col: 19>
+  <INTEGER, "1", Line: 13, Col: 21>
+  <SEMICOLON, ";", Line: 13, Col: 22>
+  <IDENTIFIER, "Sum", Line: 14, Col: 5>
+  <ASSIGN, "=", Line: 14, Col: 9>
+  <IDENTIFIER, "Sum", Line: 14, Col: 11>
+  <MINUS, "-", Line: 14, Col: 15>
+  <IDENTIFIER, "Val", Line: 14, Col: 17>
+  <SEMICOLON, ";", Line: 14, Col: 20>
+  <IDENTIFIER, "Val", Line: 15, Col: 5>
+  <ASSIGN, "=", Line: 15, Col: 9>
+  <IDENTIFIER, "Val", Line: 15, Col: 11>
+  <MULTIPLY, "*", Line: 15, Col: 15>
+  <INTEGER, "2", Line: 15, Col: 17>
+  <SEMICOLON, ";", Line: 15, Col: 18>
+  <IDENTIFIER, "Sum", Line: 16, Col: 5>
+  <ASSIGN, "=", Line: 16, Col: 9>
+  <IDENTIFIER, "Sum", Line: 16, Col: 11>
+  <DIVIDE, "/", Line: 16, Col: 15>
+  <IDENTIFIER, "Count", Line: 16, Col: 17>
+  <SEMICOLON, ";", Line: 16, Col: 22>
+  <IDENTIFIER, "Count", Line: 17, Col: 5>
+  <ASSIGN, "=", Line: 17, Col: 11>
+  <IDENTIFIER, "Count", Line: 17, Col: 13>
+  <MODULO, "%", Line: 17, Col: 19>
+  <INTEGER, "3", Line: 17, Col: 21>
+  <SEMICOLON, ";", Line: 17, Col: 22>
+  <IDENTIFIER, "Val", Line: 18, Col: 5>
+  <ASSIGN, "=", Line: 18, Col: 9>
+  <IDENTIFIER, "Val", Line: 18, Col: 11>
+  <POWER, "**", Line: 18, Col: 15>
+  <INTEGER, "2", Line: 18, Col: 18>
+  <SEMICOLON, ";", Line: 18, Col: 19>
+  <IDENTIFIER, "Count", Line: 20, Col: 5>
+  <PLUS_ASSIGN, "+=", Line: 20, Col: 11>
+  <INTEGER, "1", Line: 20, Col: 14>
+  <SEMICOLON, ";", Line: 20, Col: 15>
+  <IDENTIFIER, "Sum", Line: 21, Col: 5>
+  <MINUS_ASSIGN, "-=", Line: 21, Col: 9>
+  <INTEGER, "2", Line: 21, Col: 12>
+  <SEMICOLON, ";", Line: 21, Col: 13>
+  <IDENTIFIER, "Val", Line: 22, Col: 5>
+  <MULT_ASSIGN, "*=", Line: 22, Col: 9>
+  <INTEGER, "3", Line: 22, Col: 12>
+  <SEMICOLON, ";", Line: 22, Col: 13>
+  <IDENTIFIER, "Sum", Line: 23, Col: 5>
+  <DIV_ASSIGN, "/=", Line: 23, Col: 9>
+  <INTEGER, "4", Line: 23, Col: 12>
+  <SEMICOLON, ";", Line: 23, Col: 13>
+  <IDENTIFIER, "Count", Line: 24, Col: 5>
+  <INCREMENT, "++", Line: 24, Col: 10>
+  <SEMICOLON, ";", Line: 24, Col: 12>
+  <IDENTIFIER, "Val", Line: 25, Col: 5>
+  <DECREMENT, "--", Line: 25, Col: 8>
+  <SEMICOLON, ";", Line: 25, Col: 10>
+  <CONDITION, "condition", Line: 27, Col: 5>
+  <LPAREN, "(", Line: 27, Col: 15>
+  <IDENTIFIER, "Count", Line: 27, Col: 16>
+  <EQUAL, "==", Line: 27, Col: 22>
+  <INTEGER, "0", Line: 27, Col: 25>
+  <RPAREN, ")", Line: 27, Col: 26>
+  <LBRACE, "{", Line: 28, Col: 5>
+  <OUTPUT, "output", Line: 29, Col: 9>
+  <STRING, ""equal"", Line: 29, Col: 16>
+  <SEMICOLON, ";", Line: 29, Col: 23>
+  <RBRACE, "}", Line: 30, Col: 5>
+  <ELSE, "else", Line: 31, Col: 5>
+  <LBRACE, "{", Line: 32, Col: 5>
+  <OUTPUT, "output", Line: 33, Col: 9>
+  <STRING, ""not equal"", Line: 33, Col: 16>
+  <SEMICOLON, ";", Line: 33, Col: 27>
+  <RBRACE, "}", Line: 34, Col: 5>
+  <CONDITION, "condition", Line: 36, Col: 5>
+  <LPAREN, "(", Line: 36, Col: 15>
+  <IDENTIFIER, "Count", Line: 36, Col: 16>
+  <NOT_EQUAL, "!=", Line: 36, Col: 22>
+  <IDENTIFIER, "Val", Line: 36, Col: 25>
+  <RPAREN, ")", Line: 36, Col: 28>
+  <LBRACE, "{", Line: 37, Col: 5>
+  <OUTPUT, "output", Line: 38, Col: 9>
+  <STRING, ""different"", Line: 38, Col: 16>
+  <SEMICOLON, ";", Line: 38, Col: 27>
+  <RBRACE, "}", Line: 39, Col: 5>
+  <CONDITION, "condition", Line: 41, Col: 5>
+  <LPAREN, "(", Line: 41, Col: 15>
+  <IDENTIFIER, "Count", Line: 41, Col: 16>
+  <LESS_THAN, "<", Line: 41, Col: 22>
+  <IDENTIFIER, "Sum", Line: 41, Col: 24>
+  <RPAREN, ")", Line: 41, Col: 27>
+  <LBRACE, "{", Line: 42, Col: 5>
+  <OUTPUT, "output", Line: 43, Col: 9>
+  <STRING, ""less"", Line: 43, Col: 16>
+  <SEMICOLON, ";", Line: 43, Col: 22>
+  <RBRACE, "}", Line: 44, Col: 5>
+  <CONDITION, "condition", Line: 46, Col: 5>
+  <LPAREN, "(", Line: 46, Col: 15>
+  <IDENTIFIER, "Count", Line: 46, Col: 16>
+  <GREATER_THAN, ">", Line: 46, Col: 22>
+  <IDENTIFIER, "Val", Line: 46, Col: 24>
+  <RPAREN, ")", Line: 46, Col: 27>
+  <LBRACE, "{", Line: 47, Col: 5>
+  <OUTPUT, "output", Line: 48, Col: 9>
+  <STRING, ""greater"", Line: 48, Col: 16>
+  <SEMICOLON, ";", Line: 48, Col: 25>
+  <RBRACE, "}", Line: 49, Col: 5>
+  <CONDITION, "condition", Line: 51, Col: 5>
+  <LPAREN, "(", Line: 51, Col: 15>
+  <IDENTIFIER, "Count", Line: 51, Col: 16>
+  <LESS_EQUAL, "<=", Line: 51, Col: 22>
+  <IDENTIFIER, "Sum", Line: 51, Col: 25>
+  <RPAREN, ")", Line: 51, Col: 28>
+  <LBRACE, "{", Line: 52, Col: 5>
+  <OUTPUT, "output", Line: 53, Col: 9>
+  <STRING, ""less or equal"", Line: 53, Col: 16>
+  <SEMICOLON, ";", Line: 53, Col: 31>
+  <RBRACE, "}", Line: 54, Col: 5>
+  <CONDITION, "condition", Line: 56, Col: 5>
+  <LPAREN, "(", Line: 56, Col: 15>
+  <IDENTIFIER, "Count", Line: 56, Col: 16>
+  <GREATER_EQUAL, ">=", Line: 56, Col: 22>
+  <IDENTIFIER, "Val", Line: 56, Col: 25>
+  <RPAREN, ")", Line: 56, Col: 28>
+  <LBRACE, "{", Line: 57, Col: 5>
+  <OUTPUT, "output", Line: 58, Col: 9>
+  <STRING, ""greater or equal"", Line: 58, Col: 16>
+  <SEMICOLON, ";", Line: 58, Col: 34>
+  <RBRACE, "}", Line: 59, Col: 5>
+  <CONDITION, "condition", Line: 61, Col: 5>
+  <LPAREN, "(", Line: 61, Col: 15>
+  <IDENTIFIER, "Flag", Line: 61, Col: 16>
+  <LOGICAL_AND, "&&", Line: 61, Col: 21>
+  <IDENTIFIER, "Done", Line: 61, Col: 24>
+  <RPAREN, ")", Line: 61, Col: 28>
+  <LBRACE, "{", Line: 62, Col: 5>
+  <OUTPUT, "output", Line: 63, Col: 9>
+  <STRING, ""both true"", Line: 63, Col: 16>
+  <SEMICOLON, ";", Line: 63, Col: 27>
+  <RBRACE, "}", Line: 64, Col: 5>
+  <CONDITION, "condition", Line: 66, Col: 5>
+  <LPAREN, "(", Line: 66, Col: 15>
+  <IDENTIFIER, "Flag", Line: 66, Col: 16>
+  <LOGICAL_OR, "||", Line: 66, Col: 21>
+  <IDENTIFIER, "Done", Line: 66, Col: 24>
+  <RPAREN, ")", Line: 66, Col: 28>
+  <LBRACE, "{", Line: 67, Col: 5>
+  <OUTPUT, "output", Line: 68, Col: 9>
+  <STRING, ""one true"", Line: 68, Col: 16>
+  <SEMICOLON, ";", Line: 68, Col: 26>
+  <RBRACE, "}", Line: 69, Col: 5>
+  <CONDITION, "condition", Line: 71, Col: 5>
+  <LPAREN, "(", Line: 71, Col: 15>
+  <LOGICAL_NOT, "!", Line: 71, Col: 16>
+  <IDENTIFIER, "Flag", Line: 71, Col: 17>
+  <RPAREN, ")", Line: 71, Col: 21>
+  <LBRACE, "{", Line: 72, Col: 5>
+  <OUTPUT, "output", Line: 73, Col: 9>
+  <STRING, ""negated"", Line: 73, Col: 16>
+  <SEMICOLON, ";", Line: 73, Col: 25>
+  <RBRACE, "}", Line: 74, Col: 5>
+  <DECLARE, "declare", Line: 76, Col: 5>
+  <IDENTIFIER, "Arr", Line: 76, Col: 13>
+  <LBRACKET, "[", Line: 76, Col: 16>
+  <INTEGER, "10", Line: 76, Col: 17>
+  <RBRACKET, "]", Line: 76, Col: 19>
+  <SEMICOLON, ";", Line: 76, Col: 20>
+  <IDENTIFIER, "Arr", Line: 77, Col: 5>
+  <LBRACKET, "[", Line: 77, Col: 8>
+  <INTEGER, "0", Line: 77, Col: 9>
+  <RBRACKET, "]", Line: 77, Col: 10>
+  <ASSIGN, "=", Line: 77, Col: 12>
+  <INTEGER, "42", Line: 77, Col: 14>
+  <SEMICOLON, ";", Line: 77, Col: 16>
+  <INPUT, "input", Line: 79, Col: 5>
+  <IDENTIFIER, "Count", Line: 79, Col: 11>
+  <SEMICOLON, ";", Line: 79, Col: 16>
+  <OUTPUT, "output", Line: 80, Col: 5>
+  <IDENTIFIER, "Count", Line: 80, Col: 12>
+  <SEMICOLON, ";", Line: 80, Col: 17>
+  <LOOP, "loop", Line: 82, Col: 5>
+  <LPAREN, "(", Line: 82, Col: 10>
+  <IDENTIFIER, "Count", Line: 82, Col: 11>
+  <LESS_THAN, "<", Line: 82, Col: 17>
+  <INTEGER, "100", Line: 82, Col: 19>
+  <RPAREN, ")", Line: 82, Col: 22>
+  <LBRACE, "{", Line: 83, Col: 5>
+  <IDENTIFIER, "Count", Line: 84, Col: 9>
+  <ASSIGN, "=", Line: 84, Col: 15>
+  <IDENTIFIER, "Count", Line: 84, Col: 17>
+  <PLUS, "+", Line: 84, Col: 23>
+  <INTEGER, "1", Line: 84, Col: 25>
+  <SEMICOLON, ";", Line: 84, Col: 26>
+  <CONDITION, "condition", Line: 85, Col: 9>
+  <LPAREN, "(", Line: 85, Col: 19>
+  <IDENTIFIER, "Count", Line: 85, Col: 20>
+  <EQUAL, "==", Line: 85, Col: 26>
+  <INTEGER, "50", Line: 85, Col: 29>
+  <RPAREN, ")", Line: 85, Col: 31>
+  <LBRACE, "{", Line: 86, Col: 9>
+  <BREAK, "break", Line: 87, Col: 13>
+  <SEMICOLON, ";", Line: 87, Col: 18>
+  <RBRACE, "}", Line: 88, Col: 9>
+  <CONDITION, "condition", Line: 89, Col: 9>
+  <LPAREN, "(", Line: 89, Col: 19>
+  <IDENTIFIER, "Count", Line: 89, Col: 20>
+  <EQUAL, "==", Line: 89, Col: 26>
+  <INTEGER, "25", Line: 89, Col: 29>
+  <RPAREN, ")", Line: 89, Col: 31>
+  <LBRACE, "{", Line: 90, Col: 9>
+  <CONTINUE, "continue", Line: 91, Col: 13>
+  <SEMICOLON, ";", Line: 91, Col: 21>
+  <RBRACE, "}", Line: 92, Col: 9>
+  <RBRACE, "}", Line: 93, Col: 5>
+  <FUNCTION, "function", Line: 95, Col: 5>
+  <IDENTIFIER, "Add", Line: 95, Col: 14>
+  <LPAREN, "(", Line: 95, Col: 17>
+  <IDENTIFIER, "X", Line: 95, Col: 18>
+  <COMMA, ",", Line: 95, Col: 19>
+  <IDENTIFIER, "Y", Line: 95, Col: 21>
+  <RPAREN, ")", Line: 95, Col: 22>
+  <COLON, ":", Line: 95, Col: 24>
+  <RETURN, "return", Line: 95, Col: 26>
+  <IDENTIFIER, "X", Line: 95, Col: 33>
+  <PLUS, "+", Line: 95, Col: 35>
+  <IDENTIFIER, "Y", Line: 95, Col: 37>
+  <SEMICOLON, ";", Line: 95, Col: 38>
+  <RBRACE, "}", Line: 96, Col: 1>
+  <FINISH, "finish", Line: 97, Col: 1>
+  <EOF, "EOF", Line: 98, Col: 1>
+||============================================================|| 
+||  Total tokens: 268                                          º
+||============================================================|| 
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Val                  N/A          Global       7      ||
+|| Arr                  N/A          Global       76     ||
+|| Add                  N/A          Global       95     ||
+|| Big                  N/A          Global       9      ||
+|| Done                 N/A          Global       11     ||
+|| X                    N/A          Global       95     ||
+|| Pi                   N/A          Global       8      ||
+|| Y                    N/A          Global       95     ||
+|| Sum                  N/A          Global       6      ||
+|| Count                N/A          Global       5      ||
+|| Flag                 N/A          Global       10     ||
+||============================================================||
+
+[ErrorHandler] No lexical errors detected.
+
+--- Running tests/test2.lang ---
+||============================================================|| 
+||                        TOKEN STREAM                        || 
+||============================================================|| 
+  <START, "start", Line: 3, Col: 1>
+  <LBRACE, "{", Line: 4, Col: 1>
+  <DECLARE, "declare", Line: 5, Col: 5>
+  <IDENTIFIER, "Val1", Line: 5, Col: 13>
+  <ASSIGN, "=", Line: 5, Col: 18>
+  <INTEGER, "100", Line: 5, Col: 20>
+  <SEMICOLON, ";", Line: 5, Col: 23>
+  <DECLARE, "declare", Line: 6, Col: 5>
+  <IDENTIFIER, "Count", Line: 6, Col: 13>
+  <ASSIGN, "=", Line: 6, Col: 19>
+  <INTEGER, "7", Line: 6, Col: 21>
+  <SEMICOLON, ";", Line: 6, Col: 22>
+  <DECLARE, "declare", Line: 7, Col: 5>
+  <IDENTIFIER, "Result", Line: 7, Col: 13>
+  <ASSIGN, "=", Line: 7, Col: 20>
+  <INTEGER, "0", Line: 7, Col: 22>
+  <SEMICOLON, ";", Line: 7, Col: 23>
+  <IDENTIFIER, "Result", Line: 9, Col: 5>
+  <ASSIGN, "=", Line: 9, Col: 12>
+  <LPAREN, "(", Line: 9, Col: 14>
+  <IDENTIFIER, "Val1", Line: 9, Col: 15>
+  <MULTIPLY, "*", Line: 9, Col: 20>
+  <FLOAT, "5.5e2", Line: 9, Col: 22>
+  <RPAREN, ")", Line: 9, Col: 27>
+  <PLUS, "+", Line: 9, Col: 29>
+  <LPAREN, "(", Line: 9, Col: 31>
+  <IDENTIFIER, "Count", Line: 9, Col: 32>
+  <MODULO, "%", Line: 9, Col: 38>
+  <INTEGER, "2", Line: 9, Col: 40>
+  <RPAREN, ")", Line: 9, Col: 41>
+  <POWER, "**", Line: 9, Col: 43>
+  <INTEGER, "3", Line: 9, Col: 46>
+  <SEMICOLON, ";", Line: 9, Col: 47>
+  <IDENTIFIER, "Result", Line: 10, Col: 5>
+  <ASSIGN, "=", Line: 10, Col: 12>
+  <IDENTIFIER, "Result", Line: 10, Col: 14>
+  <DIVIDE, "/", Line: 10, Col: 21>
+  <LPAREN, "(", Line: 10, Col: 23>
+  <IDENTIFIER, "Val1", Line: 10, Col: 24>
+  <MINUS, "-", Line: 10, Col: 29>
+  <IDENTIFIER, "Count", Line: 10, Col: 31>
+  <RPAREN, ")", Line: 10, Col: 36>
+  <SEMICOLON, ";", Line: 10, Col: 37>
+  <IDENTIFIER, "Result", Line: 11, Col: 5>
+  <PLUS_ASSIGN, "+=", Line: 11, Col: 12>
+  <LPAREN, "(", Line: 11, Col: 15>
+  <IDENTIFIER, "Count", Line: 11, Col: 16>
+  <MULTIPLY, "*", Line: 11, Col: 22>
+  <IDENTIFIER, "Count", Line: 11, Col: 24>
+  <RPAREN, ")", Line: 11, Col: 29>
+  <MINUS, "-", Line: 11, Col: 31>
+  <IDENTIFIER, "Val1", Line: 11, Col: 33>
+  <SEMICOLON, ";", Line: 11, Col: 37>
+  <DECLARE, "declare", Line: 13, Col: 5>
+  <IDENTIFIER, "Temp", Line: 13, Col: 13>
+  <ASSIGN, "=", Line: 13, Col: 18>
+  <FLOAT, "-3.141592", Line: 13, Col: 20>
+  <SEMICOLON, ";", Line: 13, Col: 29>
+  <IDENTIFIER, "Temp", Line: 14, Col: 5>
+  <ASSIGN, "=", Line: 14, Col: 10>
+  <IDENTIFIER, "Temp", Line: 14, Col: 12>
+  <MULTIPLY, "*", Line: 14, Col: 17>
+  <FLOAT, "+2.0e1", Line: 14, Col: 19>
+  <SEMICOLON, ";", Line: 14, Col: 25>
+  <LOOP, "loop", Line: 16, Col: 5>
+  <LPAREN, "(", Line: 16, Col: 10>
+  <IDENTIFIER, "Count", Line: 16, Col: 11>
+  <GREATER_THAN, ">", Line: 16, Col: 17>
+  <INTEGER, "0", Line: 16, Col: 19>
+  <RPAREN, ")", Line: 16, Col: 20>
+  <LBRACE, "{", Line: 17, Col: 5>
+  <OUTPUT, "output", Line: 18, Col: 9>
+  <IDENTIFIER, "Count", Line: 18, Col: 16>
+  <SEMICOLON, ";", Line: 18, Col: 21>
+  <IDENTIFIER, "Count", Line: 19, Col: 9>
+  <DECREMENT, "--", Line: 19, Col: 14>
+  <SEMICOLON, ";", Line: 19, Col: 16>
+  <CONDITION, "condition", Line: 21, Col: 9>
+  <LPAREN, "(", Line: 21, Col: 19>
+  <IDENTIFIER, "Count", Line: 21, Col: 20>
+  <MODULO, "%", Line: 21, Col: 26>
+  <INTEGER, "2", Line: 21, Col: 28>
+  <EQUAL, "==", Line: 21, Col: 30>
+  <INTEGER, "0", Line: 21, Col: 33>
+  <RPAREN, ")", Line: 21, Col: 34>
+  <LBRACE, "{", Line: 22, Col: 9>
+  <CONTINUE, "continue", Line: 23, Col: 13>
+  <SEMICOLON, ";", Line: 23, Col: 21>
+  <RBRACE, "}", Line: 24, Col: 9>
+  <CONDITION, "condition", Line: 25, Col: 9>
+  <LPAREN, "(", Line: 25, Col: 19>
+  <IDENTIFIER, "Count", Line: 25, Col: 20>
+  <EQUAL, "==", Line: 25, Col: 26>
+  <INTEGER, "1", Line: 25, Col: 29>
+  <RPAREN, ")", Line: 25, Col: 30>
+  <LBRACE, "{", Line: 26, Col: 9>
+  <BREAK, "break", Line: 27, Col: 13>
+  <SEMICOLON, ";", Line: 27, Col: 18>
+  <RBRACE, "}", Line: 28, Col: 9>
+  <RBRACE, "}", Line: 29, Col: 5>
+  <DECLARE, "declare", Line: 31, Col: 5>
+  <IDENTIFIER, "Max", Line: 31, Col: 13>
+  <ASSIGN, "=", Line: 31, Col: 17>
+  <INTEGER, "0", Line: 31, Col: 19>
+  <SEMICOLON, ";", Line: 31, Col: 20>
+  <CONDITION, "condition", Line: 32, Col: 5>
+  <LPAREN, "(", Line: 32, Col: 15>
+  <IDENTIFIER, "Val1", Line: 32, Col: 16>
+  <GREATER_EQUAL, ">=", Line: 32, Col: 21>
+  <IDENTIFIER, "Count", Line: 32, Col: 24>
+  <LOGICAL_AND, "&&", Line: 32, Col: 30>
+  <IDENTIFIER, "Result", Line: 32, Col: 33>
+  <GREATER_THAN, ">", Line: 32, Col: 40>
+  <INTEGER, "0", Line: 32, Col: 42>
+  <RPAREN, ")", Line: 32, Col: 43>
+  <LBRACE, "{", Line: 33, Col: 5>
+  <IDENTIFIER, "Max", Line: 34, Col: 9>
+  <ASSIGN, "=", Line: 34, Col: 13>
+  <IDENTIFIER, "Val1", Line: 34, Col: 15>
+  <SEMICOLON, ";", Line: 34, Col: 19>
+  <RBRACE, "}", Line: 35, Col: 5>
+  <ELSE, "else", Line: 36, Col: 5>
+  <LBRACE, "{", Line: 37, Col: 5>
+  <IDENTIFIER, "Max", Line: 38, Col: 9>
+  <ASSIGN, "=", Line: 38, Col: 13>
+  <IDENTIFIER, "Count", Line: 38, Col: 15>
+  <SEMICOLON, ";", Line: 38, Col: 20>
+  <RBRACE, "}", Line: 39, Col: 5>
+  <CONDITION, "condition", Line: 41, Col: 5>
+  <LPAREN, "(", Line: 41, Col: 15>
+  <LOGICAL_NOT, "!", Line: 41, Col: 16>
+  <LPAREN, "(", Line: 41, Col: 17>
+  <IDENTIFIER, "Max", Line: 41, Col: 18>
+  <LESS_EQUAL, "<=", Line: 41, Col: 22>
+  <INTEGER, "0", Line: 41, Col: 25>
+  <RPAREN, ")", Line: 41, Col: 26>
+  <LOGICAL_OR, "||", Line: 41, Col: 28>
+  <IDENTIFIER, "Result", Line: 41, Col: 31>
+  <NOT_EQUAL, "!=", Line: 41, Col: 38>
+  <IDENTIFIER, "Val1", Line: 41, Col: 41>
+  <RPAREN, ")", Line: 41, Col: 45>
+  <LBRACE, "{", Line: 42, Col: 5>
+  <OUTPUT, "output", Line: 43, Col: 9>
+  <IDENTIFIER, "Max", Line: 43, Col: 16>
+  <SEMICOLON, ";", Line: 43, Col: 19>
+  <OUTPUT, "output", Line: 44, Col: 9>
+  <IDENTIFIER, "Result", Line: 44, Col: 16>
+  <SEMICOLON, ";", Line: 44, Col: 22>
+  <RBRACE, "}", Line: 45, Col: 5>
+  <FUNCTION, "function", Line: 47, Col: 5>
+  <IDENTIFIER, "Factorial", Line: 47, Col: 14>
+  <LPAREN, "(", Line: 47, Col: 23>
+  <IDENTIFIER, "N", Line: 47, Col: 24>
+  <RPAREN, ")", Line: 47, Col: 25>
+  <COLON, ":", Line: 47, Col: 27>
+  <LBRACE, "{", Line: 48, Col: 5>
+  <CONDITION, "condition", Line: 49, Col: 9>
+  <LPAREN, "(", Line: 49, Col: 19>
+  <IDENTIFIER, "N", Line: 49, Col: 20>
+  <LESS_EQUAL, "<=", Line: 49, Col: 22>
+  <INTEGER, "1", Line: 49, Col: 25>
+  <RPAREN, ")", Line: 49, Col: 26>
+  <LBRACE, "{", Line: 50, Col: 9>
+  <RETURN, "return", Line: 51, Col: 13>
+  <INTEGER, "1", Line: 51, Col: 20>
+  <SEMICOLON, ";", Line: 51, Col: 21>
+  <RBRACE, "}", Line: 52, Col: 9>
+  <RETURN, "return", Line: 53, Col: 9>
+  <IDENTIFIER, "N", Line: 53, Col: 16>
+  <MULTIPLY, "*", Line: 53, Col: 18>
+  <IDENTIFIER, "Factorial", Line: 53, Col: 20>
+  <LPAREN, "(", Line: 53, Col: 29>
+  <IDENTIFIER, "N", Line: 53, Col: 30>
+  <MINUS, "-", Line: 53, Col: 32>
+  <INTEGER, "1", Line: 53, Col: 34>
+  <RPAREN, ")", Line: 53, Col: 35>
+  <SEMICOLON, ";", Line: 53, Col: 36>
+  <RBRACE, "}", Line: 54, Col: 5>
+  <IDENTIFIER, "Result", Line: 56, Col: 5>
+  <ASSIGN, "=", Line: 56, Col: 12>
+  <IDENTIFIER, "Factorial", Line: 56, Col: 14>
+  <LPAREN, "(", Line: 56, Col: 23>
+  <IDENTIFIER, "Val1", Line: 56, Col: 24>
+  <RPAREN, ")", Line: 56, Col: 28>
+  <SEMICOLON, ";", Line: 56, Col: 29>
+  <OUTPUT, "output", Line: 57, Col: 5>
+  <IDENTIFIER, "Result", Line: 57, Col: 12>
+  <SEMICOLON, ";", Line: 57, Col: 18>
+  <RBRACE, "}", Line: 58, Col: 1>
+  <FINISH, "finish", Line: 59, Col: 1>
+  <EOF, "EOF", Line: 60, Col: 1>
+||============================================================|| 
+||  Total tokens: 191                                          º
+||============================================================|| 
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Factorial            N/A          Global       47     ||
+|| Temp                 N/A          Global       13     ||
+|| Max                  N/A          Global       31     ||
+|| Val1                 N/A          Global       5      ||
+|| Count                N/A          Global       6      ||
+|| N                    N/A          Global       47     ||
+|| Result               N/A          Global       7      ||
+||============================================================||
+
+[ErrorHandler] No lexical errors detected.
+
+--- Running tests/test3.lang ---
+||============================================================|| 
+||                        TOKEN STREAM                        || 
+||============================================================|| 
+  <START, "start", Line: 3, Col: 1>
+  <LBRACE, "{", Line: 4, Col: 1>
+  <DECLARE, "declare", Line: 5, Col: 5>
+  <IDENTIFIER, "Msg", Line: 5, Col: 13>
+  <ASSIGN, "=", Line: 5, Col: 17>
+  <STRING, ""Hello World"", Line: 5, Col: 19>
+  <SEMICOLON, ";", Line: 5, Col: 32>
+  <DECLARE, "declare", Line: 7, Col: 5>
+  <IDENTIFIER, "Escaped", Line: 7, Col: 13>
+  <ASSIGN, "=", Line: 7, Col: 21>
+  <STRING, ""Line\nBreak"", Line: 7, Col: 23>
+  <SEMICOLON, ";", Line: 7, Col: 36>
+  <DECLARE, "declare", Line: 9, Col: 5>
+  <IDENTIFIER, "Quoted", Line: 9, Col: 13>
+  <ASSIGN, "=", Line: 9, Col: 20>
+  <STRING, ""Quote\"Here"", Line: 9, Col: 22>
+  <SEMICOLON, ";", Line: 9, Col: 35>
+  <DECLARE, "declare", Line: 11, Col: 5>
+  <IDENTIFIER, "Tabbed", Line: 11, Col: 13>
+  <ASSIGN, "=", Line: 11, Col: 20>
+  <STRING, ""Col1\tCol2\tCol3"", Line: 11, Col: 22>
+  <SEMICOLON, ";", Line: 11, Col: 40>
+  <DECLARE, "declare", Line: 13, Col: 5>
+  <IDENTIFIER, "Backslash", Line: 13, Col: 13>
+  <ASSIGN, "=", Line: 13, Col: 23>
+  <STRING, ""Path\\File"", Line: 13, Col: 25>
+  <SEMICOLON, ";", Line: 13, Col: 37>
+  <DECLARE, "declare", Line: 16, Col: 5>
+  <IDENTIFIER, "Cr", Line: 16, Col: 13>
+  <ASSIGN, "=", Line: 16, Col: 16>
+  <STRING, ""Carriage\rReturn"", Line: 16, Col: 18>
+  <SEMICOLON, ";", Line: 16, Col: 36>
+  <OUTPUT, "output", Line: 18, Col: 5>
+  <IDENTIFIER, "Msg", Line: 18, Col: 12>
+  <SEMICOLON, ";", Line: 18, Col: 15>
+  <OUTPUT, "output", Line: 19, Col: 5>
+  <IDENTIFIER, "Escaped", Line: 19, Col: 12>
+  <SEMICOLON, ";", Line: 19, Col: 19>
+  <OUTPUT, "output", Line: 20, Col: 5>
+  <IDENTIFIER, "Quoted", Line: 20, Col: 12>
+  <SEMICOLON, ";", Line: 20, Col: 18>
+  <OUTPUT, "output", Line: 21, Col: 5>
+  <IDENTIFIER, "Tabbed", Line: 21, Col: 12>
+  <SEMICOLON, ";", Line: 21, Col: 18>
+  <OUTPUT, "output", Line: 22, Col: 5>
+  <IDENTIFIER, "Backslash", Line: 22, Col: 12>
+  <SEMICOLON, ";", Line: 22, Col: 21>
+  <OUTPUT, "output", Line: 23, Col: 5>
+  <IDENTIFIER, "Multi", Line: 23, Col: 12>
+  <SEMICOLON, ";", Line: 23, Col: 17>
+  <OUTPUT, "output", Line: 24, Col: 5>
+  <IDENTIFIER, "Cr", Line: 24, Col: 12>
+  <SEMICOLON, ";", Line: 24, Col: 14>
+  <DECLARE, "declare", Line: 26, Col: 5>
+  <IDENTIFIER, "Ch1", Line: 26, Col: 13>
+  <ASSIGN, "=", Line: 26, Col: 17>
+  <CHAR, "'a'", Line: 26, Col: 19>
+  <SEMICOLON, ";", Line: 26, Col: 22>
+  <DECLARE, "declare", Line: 27, Col: 5>
+  <IDENTIFIER, "Ch2", Line: 27, Col: 13>
+  <ASSIGN, "=", Line: 27, Col: 17>
+  <CHAR, "'Z'", Line: 27, Col: 19>
+  <SEMICOLON, ";", Line: 27, Col: 22>
+  <DECLARE, "declare", Line: 28, Col: 5>
+  <IDENTIFIER, "Ch3", Line: 28, Col: 13>
+  <ASSIGN, "=", Line: 28, Col: 17>
+  <CHAR, "'9'", Line: 28, Col: 19>
+  <SEMICOLON, ";", Line: 28, Col: 22>
+  <DECLARE, "declare", Line: 29, Col: 5>
+  <IDENTIFIER, "Ch4", Line: 29, Col: 13>
+  <ASSIGN, "=", Line: 29, Col: 17>
+  <CHAR, "'\t'", Line: 29, Col: 19>
+  <SEMICOLON, ";", Line: 29, Col: 23>
+  <DECLARE, "declare", Line: 30, Col: 5>
+  <IDENTIFIER, "Ch5", Line: 30, Col: 13>
+  <ASSIGN, "=", Line: 30, Col: 17>
+  <CHAR, "'\n'", Line: 30, Col: 19>
+  <SEMICOLON, ";", Line: 30, Col: 23>
+  <DECLARE, "declare", Line: 31, Col: 5>
+  <IDENTIFIER, "Ch6", Line: 31, Col: 13>
+  <ASSIGN, "=", Line: 31, Col: 17>
+  <CHAR, "'\\'", Line: 31, Col: 19>
+  <SEMICOLON, ";", Line: 31, Col: 23>
+  <DECLARE, "declare", Line: 32, Col: 5>
+  <IDENTIFIER, "Ch7", Line: 32, Col: 13>
+  <ASSIGN, "=", Line: 32, Col: 17>
+  <CHAR, "'\''", Line: 32, Col: 19>
+  <SEMICOLON, ";", Line: 32, Col: 23>
+  <OUTPUT, "output", Line: 34, Col: 5>
+  <IDENTIFIER, "Ch1", Line: 34, Col: 12>
+  <SEMICOLON, ";", Line: 34, Col: 15>
+  <OUTPUT, "output", Line: 35, Col: 5>
+  <IDENTIFIER, "Ch2", Line: 35, Col: 12>
+  <SEMICOLON, ";", Line: 35, Col: 15>
+  <OUTPUT, "output", Line: 36, Col: 5>
+  <IDENTIFIER, "Ch3", Line: 36, Col: 12>
+  <SEMICOLON, ";", Line: 36, Col: 15>
+  <OUTPUT, "output", Line: 37, Col: 5>
+  <IDENTIFIER, "Ch4", Line: 37, Col: 12>
+  <SEMICOLON, ";", Line: 37, Col: 15>
+  <OUTPUT, "output", Line: 38, Col: 5>
+  <IDENTIFIER, "Ch5", Line: 38, Col: 12>
+  <SEMICOLON, ";", Line: 38, Col: 15>
+  <OUTPUT, "output", Line: 39, Col: 5>
+  <IDENTIFIER, "Ch6", Line: 39, Col: 12>
+  <SEMICOLON, ";", Line: 39, Col: 15>
+  <OUTPUT, "output", Line: 40, Col: 5>
+  <IDENTIFIER, "Ch7", Line: 40, Col: 12>
+  <SEMICOLON, ";", Line: 40, Col: 15>
+  <RBRACE, "}", Line: 41, Col: 1>
+  <FINISH, "finish", Line: 42, Col: 1>
+  <EOF, "EOF", Line: 43, Col: 1>
+||============================================================|| 
+||  Total tokens: 112                                          º
+||============================================================|| 
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Msg                  N/A          Global       5      ||
+|| Multi                N/A          Global       23     ||
+|| Backslash            N/A          Global       13     ||
+|| Ch2                  N/A          Global       27     ||
+|| Ch1                  N/A          Global       26     ||
+|| Ch4                  N/A          Global       29     ||
+|| Escaped              N/A          Global       7      ||
+|| Cr                   N/A          Global       16     ||
+|| Ch3                  N/A          Global       28     ||
+|| Tabbed               N/A          Global       11     ||
+|| Ch6                  N/A          Global       31     ||
+|| Ch5                  N/A          Global       30     ||
+|| Ch7                  N/A          Global       32     ||
+|| Quoted               N/A          Global       9      ||
+||============================================================||
+
+[ErrorHandler] No lexical errors detected.
+
+--- Running tests/test4.lang ---
+||============================================================|| 
+||                        TOKEN STREAM                        || 
+||============================================================|| 
+  <START, "start", Line: 3, Col: 1>
+  <LBRACE, "{", Line: 4, Col: 1>
+  <DECLARE, "declare", Line: 6, Col: 5>
+  <ERROR, "invalidVar", Line: 6, Col: 13>
+  <ASSIGN, "=", Line: 6, Col: 24>
+  <INTEGER, "5", Line: 6, Col: 26>
+  <SEMICOLON, ";", Line: 6, Col: 27>
+  <DECLARE, "declare", Line: 9, Col: 5>
+  <IDENTIFIER, "Count", Line: 9, Col: 13>
+  <ASSIGN, "=", Line: 9, Col: 19>
+  <INTEGER, "10", Line: 9, Col: 21>
+  <ERROR, "@", Line: 9, Col: 24>
+  <INTEGER, "5", Line: 9, Col: 26>
+  <SEMICOLON, ";", Line: 9, Col: 27>
+  <DECLARE, "declare", Line: 12, Col: 5>
+  <IDENTIFIER, "Bad_float", Line: 12, Col: 13>
+  <ASSIGN, "=", Line: 12, Col: 23>
+  <ERROR, "3.1234567", Line: 12, Col: 25>
+  <SEMICOLON, ";", Line: 12, Col: 34>
+  <DECLARE, "declare", Line: 15, Col: 5>
+  <IDENTIFIER, "Broken", Line: 15, Col: 13>
+  <ASSIGN, "=", Line: 15, Col: 20>
+  <ERROR, ""this string never ends;", Line: 15, Col: 22>
+  <DECLARE, "declare", Line: 18, Col: 5>
+  <IDENTIFIER, "Esc", Line: 18, Col: 13>
+  <ASSIGN, "=", Line: 18, Col: 17>
+  <ERROR, ""bad \x escape"", Line: 18, Col: 19>
+  <SEMICOLON, ";", Line: 18, Col: 34>
+  <DECLARE, "declare", Line: 21, Col: 5>
+  <ERROR, "Abcdefghijklmnopqrstuvwxyz_extra", Line: 21, Col: 13>
+  <ASSIGN, "=", Line: 21, Col: 46>
+  <INTEGER, "99", Line: 21, Col: 48>
+  <SEMICOLON, ";", Line: 21, Col: 50>
+  <DECLARE, "declare", Line: 24, Col: 5>
+  <IDENTIFIER, "Ch", Line: 24, Col: 13>
+  <ASSIGN, "=", Line: 24, Col: 16>
+  <ERROR, "'", Line: 24, Col: 18>
+  <DECLARE, "declare", Line: 27, Col: 5>
+  <IDENTIFIER, "Empty", Line: 27, Col: 13>
+  <ASSIGN, "=", Line: 27, Col: 19>
+  <ERROR, "''", Line: 27, Col: 21>
+  <SEMICOLON, ";", Line: 27, Col: 23>
+  <DECLARE, "declare", Line: 30, Col: 5>
+  <IDENTIFIER, "Multi", Line: 30, Col: 13>
+  <ASSIGN, "=", Line: 30, Col: 19>
+  <ERROR, "'ab'", Line: 30, Col: 21>
+  <SEMICOLON, ";", Line: 30, Col: 25>
+  <DECLARE, "declare", Line: 33, Col: 5>
+  <IDENTIFIER, "Tilde", Line: 33, Col: 13>
+  <ASSIGN, "=", Line: 33, Col: 19>
+  <ERROR, "~", Line: 33, Col: 21>
+  <INTEGER, "5", Line: 33, Col: 22>
+  <SEMICOLON, ";", Line: 33, Col: 23>
+  <RBRACE, "}", Line: 34, Col: 1>
+  <FINISH, "finish", Line: 35, Col: 1>
+  <EOF, "EOF", Line: 36, Col: 1>
+||============================================================|| 
+||  Total tokens: 56                                           º
+||============================================================|| 
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Bad_float            N/A          Global       12     ||
+|| Empty                N/A          Global       27     ||
+|| Esc                  N/A          Global       18     ||
+|| Ch                   N/A          Global       24     ||
+|| Tilde                N/A          Global       33     ||
+|| Multi                N/A          Global       30     ||
+|| Count                N/A          Global       9      ||
+|| Broken               N/A          Global       15     ||
+||============================================================||
+
+||============================================================||
+||                     LEXICAL ERRORS                         ||
+||============================================================||
+||  Error: [Invalid Identifier] at Line 6, Col 13: Lexeme "invalidVar" - Identifiers must start with an uppercase letter [A-Z].
+||  Error: [Invalid Character] at Line 9, Col 24: Lexeme "@" - Character is not part of the language alphabet.
+||  Error: [Malformed Literal] at Line 12, Col 25: Lexeme "3.1234567" - Float literal exceeds maximum of 6 decimal digits.
+||  Error: [Unclosed String] at Line 15, Col 22: Lexeme ""this string never ends;" - String literal was never terminated.
+||  Error: [Invalid Escape] at Line 18, Col 19: Lexeme "\x" - Unrecognized escape sequence.
+||  Error: [Identifier Too Long] at Line 21, Col 13: Lexeme "Abcdefghijklmnopqrstuvwxyz_extra" - Identifier exceeds maximum length of 31 characters.
+||  Error: [Unclosed Char] at Line 24, Col 18: Lexeme "'" - Character literal was never terminated.
+||  Error: [Malformed Literal] at Line 27, Col 21: Lexeme "''" - Empty character literal.
+||  Error: [Malformed Literal] at Line 30, Col 21: Lexeme "'ab'" - Character literal contains more than one character.
+||  Error: [Invalid Character] at Line 33, Col 21: Lexeme "~" - Character is not part of the language alphabet.
+||============================================================||
+||  Total errors: 10                                            ||
+||============================================================||
+
+--- Running tests/test5.lang ---
+||============================================================|| 
+||                        TOKEN STREAM                        || 
+||============================================================|| 
+  <START, "start", Line: 4, Col: 1>
+  <LBRACE, "{", Line: 5, Col: 1>
+  <DECLARE, "declare", Line: 7, Col: 5>
+  <IDENTIFIER, "Count", Line: 7, Col: 13>
+  <ASSIGN, "=", Line: 7, Col: 19>
+  <INTEGER, "0", Line: 7, Col: 21>
+  <SEMICOLON, ";", Line: 7, Col: 22>
+  <IDENTIFIER, "Count", Line: 15, Col: 5>
+  <ASSIGN, "=", Line: 15, Col: 11>
+  <IDENTIFIER, "Count", Line: 15, Col: 13>
+  <PLUS, "+", Line: 15, Col: 19>
+  <INTEGER, "1", Line: 15, Col: 21>
+  <SEMICOLON, ";", Line: 15, Col: 22>
+  <OUTPUT, "output", Line: 18, Col: 5>
+  <IDENTIFIER, "Count", Line: 18, Col: 12>
+  <SEMICOLON, ";", Line: 18, Col: 17>
+  <DECLARE, "declare", Line: 22, Col: 5>
+  <IDENTIFIER, "Val", Line: 22, Col: 13>
+  <ASSIGN, "=", Line: 22, Col: 17>
+  <INTEGER, "42", Line: 22, Col: 19>
+  <SEMICOLON, ";", Line: 22, Col: 21>
+  <LOOP, "loop", Line: 29, Col: 5>
+  <LPAREN, "(", Line: 29, Col: 10>
+  <IDENTIFIER, "Count", Line: 29, Col: 11>
+  <LESS_THAN, "<", Line: 29, Col: 17>
+  <IDENTIFIER, "Val", Line: 29, Col: 19>
+  <RPAREN, ")", Line: 29, Col: 22>
+  <LBRACE, "{", Line: 30, Col: 5>
+  <IDENTIFIER, "Count", Line: 31, Col: 9>
+  <INCREMENT, "++", Line: 31, Col: 14>
+  <SEMICOLON, ";", Line: 31, Col: 16>
+  <CONDITION, "condition", Line: 33, Col: 9>
+  <LPAREN, "(", Line: 33, Col: 19>
+  <IDENTIFIER, "Count", Line: 33, Col: 20>
+  <MODULO, "%", Line: 33, Col: 26>
+  <INTEGER, "2", Line: 33, Col: 28>
+  <EQUAL, "==", Line: 33, Col: 30>
+  <INTEGER, "0", Line: 33, Col: 33>
+  <RPAREN, ")", Line: 33, Col: 34>
+  <LBRACE, "{", Line: 34, Col: 9>
+  <CONTINUE, "continue", Line: 35, Col: 13>
+  <SEMICOLON, ";", Line: 35, Col: 21>
+  <RBRACE, "}", Line: 36, Col: 9>
+  <OUTPUT, "output", Line: 37, Col: 9>
+  <IDENTIFIER, "Count", Line: 37, Col: 16>
+  <SEMICOLON, ";", Line: 37, Col: 21>
+  <RBRACE, "}", Line: 38, Col: 5>
+  <OUTPUT, "output", Line: 41, Col: 5>
+  <STRING, ""done"", Line: 41, Col: 12>
+  <SEMICOLON, ";", Line: 41, Col: 18>
+  <RBRACE, "}", Line: 42, Col: 1>
+  <FINISH, "finish", Line: 43, Col: 1>
+  <EOF, "EOF", Line: 45, Col: 1>
+||============================================================|| 
+||  Total tokens: 53                                           º
+||============================================================|| 
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Val                  N/A          Global       22     ||
+|| Count                N/A          Global       7      ||
+||============================================================||
+
+[ErrorHandler] No lexical errors detected.
+
+=== ALL TESTS COMPLETE ===
+Results written to tests/TestResults.txt

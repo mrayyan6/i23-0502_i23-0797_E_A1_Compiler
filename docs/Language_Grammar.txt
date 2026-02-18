@@ -1,0 +1,251 @@
+================================================================================
+                        LANGUAGE GRAMMAR SPECIFICATION
+================================================================================
+
+Language Name:  rayyan Hasan Lang
+File Extension: .lang
+
+================================================================================
+1. KEYWORDS (Case-Sensitive, Exact Match)
+================================================================================
+
+  Keyword       Meaning
+  ----------    -----------------------------------------------
+  start         Marks the beginning of the program
+  finish        Marks the end of the program
+  loop          Loop construct (similar to while)
+  condition     Conditional statement (similar to if)
+  else          Else branch for condition
+  declare       Variable declaration
+  output        Print/display a value
+  input         Read a value from user
+  function      Function declaration
+  return        Return a value from a function
+  break         Exit a loop
+  continue      Skip to next loop iteration
+
+  Regex: (start|finish|loop|condition|declare|output|input|function|return|break|continue|else)
+
+================================================================================
+2. IDENTIFIERS
+================================================================================
+
+  Rules:
+    - Must start with an uppercase letter (A-Z)
+    - Followed by lowercase letters (a-z), digits (0-9), or underscores (_)
+    - Maximum 31 characters total
+
+  Regex: [A-Z][a-z0-9_]{0,30}
+
+  Valid Examples:    Count, Variable_name, X, Total_sum_2024, Pi, Big
+  Invalid Examples:  count (lowercase start), Variable (uppercase after first),
+                     2Count (starts with digit), myVariable (lowercase start)
+
+================================================================================
+3. LITERAL TYPES
+================================================================================
+
+3.1 Integer Literals
+--------------------
+  Regex: [+-]?[0-9]+
+
+  Valid:   42, +100, -567, 0
+  Invalid: 12.34, 1,000
+
+3.2 Floating-Point Literals
+----------------------------
+  Regex: [+-]?[0-9]+\.[0-9]{1,6}([eE][+-]?[0-9]+)?
+
+  - Must have digits before and after the decimal point
+  - Maximum 6 decimal digits
+  - Optional exponent part with e/E
+
+  Valid:   3.14, +2.5, -0.123456, 1.5e10, 2.0E-3
+  Invalid: 3. (no decimal digits), .14 (no whole part),
+           1.2345678 (more than 6 decimal digits)
+
+3.3 String Literals
+--------------------
+  Delimiters: "..." (double quotes)
+  Regex: "([ ^"\\\n]|\\["\\ntr])*"
+
+  Supported escape sequences:
+    \"   double quote
+    \\   backslash
+    \n   newline
+    \t   tab
+    \r   carriage return
+
+  Valid:   "Hello World", "Line\nBreak", "Quote\"Here", "Path\\File"
+  Invalid: "unclosed string (missing closing quote)
+           "bad \x escape" (invalid escape sequence)
+
+3.4 Character Literals
+-----------------------
+  Delimiters: '...' (single quotes)
+  Regex: '([^'\\\n]|\\['\\ntr])'
+
+  - Must contain exactly one character or one escape sequence
+  - Same escape sequences as strings (with \' instead of \")
+
+  Valid:   'a', 'Z', '9', '\t', '\n', '\\', '\''
+  Invalid: '' (empty), 'ab' (multiple chars), ' (unclosed)
+
+3.5 Boolean Literals
+---------------------
+  Regex: (true|false)
+
+  Case-sensitive: only lowercase true and false
+
+================================================================================
+4. OPERATORS
+================================================================================
+
+4.1 Arithmetic Operators
+-------------------------
+  +    Addition
+  -    Subtraction
+  *    Multiplication
+  /    Division
+  %    Modulo
+  **   Exponentiation (power)
+
+4.2 Relational Operators
+-------------------------
+  ==   Equal to
+  !=   Not equal to
+  <    Less than
+  >    Greater than
+  <=   Less than or equal to
+  >=   Greater than or equal to
+
+4.3 Logical Operators
+----------------------
+  &&   Logical AND
+  ||   Logical OR
+  !    Logical NOT
+
+4.4 Assignment Operators
+-------------------------
+  =    Simple assignment
+  +=   Add and assign
+  -=   Subtract and assign
+  *=   Multiply and assign
+  /=   Divide and assign
+
+4.5 Increment / Decrement
+---------------------------
+  ++   Increment by 1
+  --   Decrement by 1
+
+  Operator Precedence (highest to lowest):
+    1.  **            (exponentiation, right-to-left)
+    2.  !, ++, --     (unary)
+    3.  *, /, %       (multiplicative)
+    4.  +, -          (additive)
+    5.  <, >, <=, >=  (relational)
+    6.  ==, !=        (equality)
+    7.  &&            (logical AND)
+    8.  ||            (logical OR)
+    9.  =, +=, -=, *=, /=  (assignment, right-to-left)
+
+================================================================================
+5. PUNCTUATORS
+================================================================================
+
+  (    Left parenthesis
+  )    Right parenthesis
+  {    Left brace (block start)
+  }    Right brace (block end)
+  [    Left bracket (array index)
+  ]    Right bracket (array index)
+  ,    Comma (parameter separator)
+  ;    Semicolon (statement terminator)
+  :    Colon (function body separator)
+
+  Regex: [(){}[\],;:]
+
+================================================================================
+6. COMMENTS
+================================================================================
+
+  Single-line comment:
+    Starts with ## and continues to end of line
+    Regex: ##[^\n]*
+
+    Example: ## this is a comment
+
+  Multi-line comment:
+    Starts with #| and ends with |#
+    Regex: #\*([^*]|\*+[^*#])*\*+#
+
+    Example:
+      #|
+          This is a multi-line comment.
+          It can span several lines.
+      |#
+
+  Notes:
+    - Comments are stripped during scanning
+    - Nesting of multi-line comments is NOT supported
+    - Unclosed multi-line comments produce a lexical error
+
+================================================================================
+7. WHITESPACE
+================================================================================
+
+  Regex: [ \t\r\n]+
+
+  - Whitespace is skipped but used to separate tokens
+  - Line numbers are tracked for error reporting
+  - Whitespace inside string literals is preserved
+
+================================================================================
+8. PATTERN MATCHING PRIORITY
+================================================================================
+
+  Tokens are matched in this order to resolve ambiguity:
+
+    1.  Multi-line comments    (#| ... |#)
+    2.  Single-line comments   (## ...)
+    3.  Multi-character operators (**, ==, !=, <=, >=, &&, ||, ++, --, +=, -=, *=, /=)
+    4.  Keywords
+    5.  Boolean literals
+    6.  Identifiers
+    7.  Floating-point literals
+    8.  Integer literals
+    9.  String / character literals
+   10.  Single-character operators
+   11.  Punctuators
+   12.  Whitespace
+
+================================================================================
+9. SAMPLE PROGRAMS
+================================================================================
+
+--- Sample 1: Hello World ---
+
+start
+{
+    output "Hello, World!";
+}
+finish
+
+--- Sample 2: Factorial Function ---
+
+start
+{
+    declare N = 5;
+    declare Result = 1;
+
+    loop (N > 1)
+    {
+        Result *= N;
+        N--;
+    }
+
+    output "Factorial is:";
+    output Result;
+}
+finish
+

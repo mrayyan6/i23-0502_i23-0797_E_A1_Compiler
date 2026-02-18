@@ -1,0 +1,947 @@
+
+--- Running tests/test1.lang ---
+||============================================================||
+||                        TOKEN STREAM                        ||
+||============================================================||
+  <START, "start", Line: 3, Col: 1>
+  <FINISH, "finish", Line: 97, Col: 1>
+  <LOOP, "loop", Line: 82, Col: 5>
+  <CONDITION, "condition", Line: 27, Col: 5>
+  <CONDITION, "condition", Line: 36, Col: 5>
+  <CONDITION, "condition", Line: 41, Col: 5>
+  <CONDITION, "condition", Line: 46, Col: 5>
+  <CONDITION, "condition", Line: 51, Col: 5>
+  <CONDITION, "condition", Line: 56, Col: 5>
+  <CONDITION, "condition", Line: 61, Col: 5>
+  <CONDITION, "condition", Line: 66, Col: 5>
+  <CONDITION, "condition", Line: 71, Col: 5>
+  <CONDITION, "condition", Line: 85, Col: 9>
+  <CONDITION, "condition", Line: 89, Col: 9>
+  <DECLARE, "declare", Line: 5, Col: 5>
+  <DECLARE, "declare", Line: 6, Col: 5>
+  <DECLARE, "declare", Line: 7, Col: 5>
+  <DECLARE, "declare", Line: 8, Col: 5>
+  <DECLARE, "declare", Line: 9, Col: 5>
+  <DECLARE, "declare", Line: 10, Col: 5>
+  <DECLARE, "declare", Line: 11, Col: 5>
+  <DECLARE, "declare", Line: 76, Col: 5>
+  <OUTPUT, "output", Line: 29, Col: 9>
+  <OUTPUT, "output", Line: 33, Col: 9>
+  <OUTPUT, "output", Line: 38, Col: 9>
+  <OUTPUT, "output", Line: 43, Col: 9>
+  <OUTPUT, "output", Line: 48, Col: 9>
+  <OUTPUT, "output", Line: 53, Col: 9>
+  <OUTPUT, "output", Line: 58, Col: 9>
+  <OUTPUT, "output", Line: 63, Col: 9>
+  <OUTPUT, "output", Line: 68, Col: 9>
+  <OUTPUT, "output", Line: 73, Col: 9>
+  <OUTPUT, "output", Line: 80, Col: 5>
+  <INPUT, "input", Line: 79, Col: 5>
+  <FUNCTION, "function", Line: 95, Col: 5>
+  <RETURN, "return", Line: 95, Col: 26>
+  <BREAK, "break", Line: 87, Col: 13>
+  <CONTINUE, "continue", Line: 91, Col: 13>
+  <ELSE, "else", Line: 31, Col: 5>
+  <INTEGER, "0", Line: 5, Col: 21>
+  <INTEGER, "+10", Line: 6, Col: 19>
+  <INTEGER, "-5", Line: 7, Col: 19>
+  <INTEGER, "1", Line: 13, Col: 21>
+  <INTEGER, "2", Line: 15, Col: 17>
+  <INTEGER, "3", Line: 17, Col: 21>
+  <INTEGER, "2", Line: 18, Col: 18>
+  <INTEGER, "1", Line: 20, Col: 14>
+  <INTEGER, "2", Line: 21, Col: 12>
+  <INTEGER, "3", Line: 22, Col: 12>
+  <INTEGER, "4", Line: 23, Col: 12>
+  <INTEGER, "0", Line: 27, Col: 25>
+  <INTEGER, "10", Line: 76, Col: 17>
+  <INTEGER, "0", Line: 77, Col: 9>
+  <INTEGER, "42", Line: 77, Col: 14>
+  <INTEGER, "100", Line: 82, Col: 19>
+  <INTEGER, "1", Line: 84, Col: 25>
+  <INTEGER, "50", Line: 85, Col: 29>
+  <INTEGER, "25", Line: 89, Col: 29>
+  <FLOAT, "3.14", Line: 8, Col: 18>
+  <FLOAT, "5.5e2", Line: 9, Col: 19>
+  <STRING, "$equal$", Line: 29, Col: 16>
+  <STRING, "$not equal$", Line: 33, Col: 16>
+  <STRING, "$different$", Line: 38, Col: 16>
+  <STRING, "$less$", Line: 43, Col: 16>
+  <STRING, "$greater$", Line: 48, Col: 16>
+  <STRING, "$less or equal$", Line: 53, Col: 16>
+  <STRING, "$greater or equal$", Line: 58, Col: 16>
+  <STRING, "$both true$", Line: 63, Col: 16>
+  <STRING, "$one true$", Line: 68, Col: 16>
+  <STRING, "$negated$", Line: 73, Col: 16>
+  <BOOLEAN, "true", Line: 10, Col: 20>
+  <BOOLEAN, "false", Line: 11, Col: 20>
+  <IDENTIFIER, "Count", Line: 5, Col: 13>
+  <IDENTIFIER, "Sum", Line: 6, Col: 13>
+  <IDENTIFIER, "Val", Line: 7, Col: 13>
+  <IDENTIFIER, "Pi", Line: 8, Col: 13>
+  <IDENTIFIER, "Big", Line: 9, Col: 13>
+  <IDENTIFIER, "Flag", Line: 10, Col: 13>
+  <IDENTIFIER, "Done", Line: 11, Col: 13>
+  <IDENTIFIER, "Count", Line: 13, Col: 5>
+  <IDENTIFIER, "Count", Line: 13, Col: 13>
+  <IDENTIFIER, "Sum", Line: 14, Col: 5>
+  <IDENTIFIER, "Sum", Line: 14, Col: 11>
+  <IDENTIFIER, "Val", Line: 14, Col: 17>
+  <IDENTIFIER, "Val", Line: 15, Col: 5>
+  <IDENTIFIER, "Val", Line: 15, Col: 11>
+  <IDENTIFIER, "Sum", Line: 16, Col: 5>
+  <IDENTIFIER, "Sum", Line: 16, Col: 11>
+  <IDENTIFIER, "Count", Line: 16, Col: 17>
+  <IDENTIFIER, "Count", Line: 17, Col: 5>
+  <IDENTIFIER, "Count", Line: 17, Col: 13>
+  <IDENTIFIER, "Val", Line: 18, Col: 5>
+  <IDENTIFIER, "Val", Line: 18, Col: 11>
+  <IDENTIFIER, "Count", Line: 20, Col: 5>
+  <IDENTIFIER, "Sum", Line: 21, Col: 5>
+  <IDENTIFIER, "Val", Line: 22, Col: 5>
+  <IDENTIFIER, "Sum", Line: 23, Col: 5>
+  <IDENTIFIER, "Count", Line: 24, Col: 5>
+  <IDENTIFIER, "Val", Line: 25, Col: 5>
+  <IDENTIFIER, "Count", Line: 27, Col: 16>
+  <IDENTIFIER, "Count", Line: 36, Col: 16>
+  <IDENTIFIER, "Val", Line: 36, Col: 25>
+  <IDENTIFIER, "Count", Line: 41, Col: 16>
+  <IDENTIFIER, "Sum", Line: 41, Col: 24>
+  <IDENTIFIER, "Count", Line: 46, Col: 16>
+  <IDENTIFIER, "Val", Line: 46, Col: 24>
+  <IDENTIFIER, "Count", Line: 51, Col: 16>
+  <IDENTIFIER, "Sum", Line: 51, Col: 25>
+  <IDENTIFIER, "Count", Line: 56, Col: 16>
+  <IDENTIFIER, "Val", Line: 56, Col: 25>
+  <IDENTIFIER, "Flag", Line: 61, Col: 16>
+  <IDENTIFIER, "Done", Line: 61, Col: 24>
+  <IDENTIFIER, "Flag", Line: 66, Col: 16>
+  <IDENTIFIER, "Done", Line: 66, Col: 24>
+  <IDENTIFIER, "Flag", Line: 71, Col: 17>
+  <IDENTIFIER, "Arr", Line: 76, Col: 13>
+  <IDENTIFIER, "Arr", Line: 77, Col: 5>
+  <IDENTIFIER, "Count", Line: 79, Col: 11>
+  <IDENTIFIER, "Count", Line: 80, Col: 12>
+  <IDENTIFIER, "Count", Line: 82, Col: 11>
+  <IDENTIFIER, "Count", Line: 84, Col: 9>
+  <IDENTIFIER, "Count", Line: 84, Col: 17>
+  <IDENTIFIER, "Count", Line: 85, Col: 20>
+  <IDENTIFIER, "Count", Line: 89, Col: 20>
+  <IDENTIFIER, "Add", Line: 95, Col: 14>
+  <IDENTIFIER, "X", Line: 95, Col: 18>
+  <IDENTIFIER, "Y", Line: 95, Col: 21>
+  <IDENTIFIER, "X", Line: 95, Col: 33>
+  <IDENTIFIER, "Y", Line: 95, Col: 37>
+  <PLUS, "+", Line: 13, Col: 19>
+  <PLUS, "+", Line: 84, Col: 23>
+  <PLUS, "+", Line: 95, Col: 35>
+  <MINUS, "-", Line: 14, Col: 15>
+  <MULTIPLY, "*", Line: 15, Col: 15>
+  <DIVIDE, "/", Line: 16, Col: 15>
+  <MODULO, "%", Line: 17, Col: 19>
+  <POWER, "**", Line: 18, Col: 15>
+  <EQUAL, "==", Line: 27, Col: 22>
+  <EQUAL, "==", Line: 85, Col: 26>
+  <EQUAL, "==", Line: 89, Col: 26>
+  <NOT_EQUAL, "!=", Line: 36, Col: 22>
+  <LESS_EQUAL, "<=", Line: 51, Col: 22>
+  <GREATER_EQUAL, ">=", Line: 56, Col: 22>
+  <LESS_THAN, "<", Line: 41, Col: 22>
+  <LESS_THAN, "<", Line: 82, Col: 17>
+  <GREATER_THAN, ">", Line: 46, Col: 22>
+  <LOGICAL_AND, "&&", Line: 61, Col: 21>
+  <LOGICAL_OR, "||", Line: 66, Col: 21>
+  <LOGICAL_NOT, "!", Line: 71, Col: 16>
+  <ASSIGN, "=", Line: 5, Col: 19>
+  <ASSIGN, "=", Line: 6, Col: 17>
+  <ASSIGN, "=", Line: 7, Col: 17>
+  <ASSIGN, "=", Line: 8, Col: 16>
+  <ASSIGN, "=", Line: 9, Col: 17>
+  <ASSIGN, "=", Line: 10, Col: 18>
+  <ASSIGN, "=", Line: 11, Col: 18>
+  <ASSIGN, "=", Line: 13, Col: 11>
+  <ASSIGN, "=", Line: 14, Col: 9>
+  <ASSIGN, "=", Line: 15, Col: 9>
+  <ASSIGN, "=", Line: 16, Col: 9>
+  <ASSIGN, "=", Line: 17, Col: 11>
+  <ASSIGN, "=", Line: 18, Col: 9>
+  <ASSIGN, "=", Line: 77, Col: 12>
+  <ASSIGN, "=", Line: 84, Col: 15>
+  <PLUS_ASSIGN, "+=", Line: 20, Col: 11>
+  <MINUS_ASSIGN, "-=", Line: 21, Col: 9>
+  <MULT_ASSIGN, "*=", Line: 22, Col: 9>
+  <DIV_ASSIGN, "/=", Line: 23, Col: 9>
+  <INCREMENT, "++", Line: 24, Col: 10>
+  <DECREMENT, "--", Line: 25, Col: 8>
+  <LPAREN, "(", Line: 27, Col: 15>
+  <LPAREN, "(", Line: 36, Col: 15>
+  <LPAREN, "(", Line: 41, Col: 15>
+  <LPAREN, "(", Line: 46, Col: 15>
+  <LPAREN, "(", Line: 51, Col: 15>
+  <LPAREN, "(", Line: 56, Col: 15>
+  <LPAREN, "(", Line: 61, Col: 15>
+  <LPAREN, "(", Line: 66, Col: 15>
+  <LPAREN, "(", Line: 71, Col: 15>
+  <LPAREN, "(", Line: 82, Col: 10>
+  <LPAREN, "(", Line: 85, Col: 19>
+  <LPAREN, "(", Line: 89, Col: 19>
+  <LPAREN, "(", Line: 95, Col: 17>
+  <RPAREN, ")", Line: 27, Col: 26>
+  <RPAREN, ")", Line: 36, Col: 28>
+  <RPAREN, ")", Line: 41, Col: 27>
+  <RPAREN, ")", Line: 46, Col: 27>
+  <RPAREN, ")", Line: 51, Col: 28>
+  <RPAREN, ")", Line: 56, Col: 28>
+  <RPAREN, ")", Line: 61, Col: 28>
+  <RPAREN, ")", Line: 66, Col: 28>
+  <RPAREN, ")", Line: 71, Col: 21>
+  <RPAREN, ")", Line: 82, Col: 22>
+  <RPAREN, ")", Line: 85, Col: 31>
+  <RPAREN, ")", Line: 89, Col: 31>
+  <RPAREN, ")", Line: 95, Col: 22>
+  <LBRACE, "{", Line: 4, Col: 1>
+  <LBRACE, "{", Line: 28, Col: 5>
+  <LBRACE, "{", Line: 32, Col: 5>
+  <LBRACE, "{", Line: 37, Col: 5>
+  <LBRACE, "{", Line: 42, Col: 5>
+  <LBRACE, "{", Line: 47, Col: 5>
+  <LBRACE, "{", Line: 52, Col: 5>
+  <LBRACE, "{", Line: 57, Col: 5>
+  <LBRACE, "{", Line: 62, Col: 5>
+  <LBRACE, "{", Line: 67, Col: 5>
+  <LBRACE, "{", Line: 72, Col: 5>
+  <LBRACE, "{", Line: 83, Col: 5>
+  <LBRACE, "{", Line: 86, Col: 9>
+  <LBRACE, "{", Line: 90, Col: 9>
+  <RBRACE, "}", Line: 30, Col: 5>
+  <RBRACE, "}", Line: 34, Col: 5>
+  <RBRACE, "}", Line: 39, Col: 5>
+  <RBRACE, "}", Line: 44, Col: 5>
+  <RBRACE, "}", Line: 49, Col: 5>
+  <RBRACE, "}", Line: 54, Col: 5>
+  <RBRACE, "}", Line: 59, Col: 5>
+  <RBRACE, "}", Line: 64, Col: 5>
+  <RBRACE, "}", Line: 69, Col: 5>
+  <RBRACE, "}", Line: 74, Col: 5>
+  <RBRACE, "}", Line: 88, Col: 9>
+  <RBRACE, "}", Line: 92, Col: 9>
+  <RBRACE, "}", Line: 93, Col: 5>
+  <RBRACE, "}", Line: 96, Col: 1>
+  <LBRACKET, "[", Line: 76, Col: 16>
+  <LBRACKET, "[", Line: 77, Col: 8>
+  <RBRACKET, "]", Line: 76, Col: 19>
+  <RBRACKET, "]", Line: 77, Col: 10>
+  <COMMA, ",", Line: 95, Col: 19>
+  <SEMICOLON, ";", Line: 5, Col: 22>
+  <SEMICOLON, ";", Line: 6, Col: 22>
+  <SEMICOLON, ";", Line: 7, Col: 21>
+  <SEMICOLON, ";", Line: 8, Col: 22>
+  <SEMICOLON, ";", Line: 9, Col: 24>
+  <SEMICOLON, ";", Line: 10, Col: 24>
+  <SEMICOLON, ";", Line: 11, Col: 25>
+  <SEMICOLON, ";", Line: 13, Col: 22>
+  <SEMICOLON, ";", Line: 14, Col: 20>
+  <SEMICOLON, ";", Line: 15, Col: 18>
+  <SEMICOLON, ";", Line: 16, Col: 22>
+  <SEMICOLON, ";", Line: 17, Col: 22>
+  <SEMICOLON, ";", Line: 18, Col: 19>
+  <SEMICOLON, ";", Line: 20, Col: 15>
+  <SEMICOLON, ";", Line: 21, Col: 13>
+  <SEMICOLON, ";", Line: 22, Col: 13>
+  <SEMICOLON, ";", Line: 23, Col: 13>
+  <SEMICOLON, ";", Line: 24, Col: 12>
+  <SEMICOLON, ";", Line: 25, Col: 10>
+  <SEMICOLON, ";", Line: 29, Col: 23>
+  <SEMICOLON, ";", Line: 33, Col: 27>
+  <SEMICOLON, ";", Line: 38, Col: 27>
+  <SEMICOLON, ";", Line: 43, Col: 22>
+  <SEMICOLON, ";", Line: 48, Col: 25>
+  <SEMICOLON, ";", Line: 53, Col: 31>
+  <SEMICOLON, ";", Line: 58, Col: 34>
+  <SEMICOLON, ";", Line: 63, Col: 27>
+  <SEMICOLON, ";", Line: 68, Col: 26>
+  <SEMICOLON, ";", Line: 73, Col: 25>
+  <SEMICOLON, ";", Line: 76, Col: 20>
+  <SEMICOLON, ";", Line: 77, Col: 16>
+  <SEMICOLON, ";", Line: 79, Col: 16>
+  <SEMICOLON, ";", Line: 80, Col: 17>
+  <SEMICOLON, ";", Line: 84, Col: 26>
+  <SEMICOLON, ";", Line: 87, Col: 18>
+  <SEMICOLON, ";", Line: 91, Col: 21>
+  <SEMICOLON, ";", Line: 95, Col: 38>
+  <COLON, ":", Line: 95, Col: 24>
+  <EOF, "EOF", Line: 98, Col: 1>
+||============================================================||
+||  Total tokens: 268                                          ||
+||============================================================||
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Count                unknown      global       5      ||
+|| Sum                  unknown      global       6      ||
+|| Val                  unknown      global       7      ||
+|| Pi                   unknown      global       8      ||
+|| Big                  unknown      global       9      ||
+|| Flag                 unknown      global       10     ||
+|| Done                 unknown      global       11     ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Sum                  unknown      global       6      ||
+|| Sum                  unknown      global       6      ||
+|| Val                  unknown      global       7      ||
+|| Val                  unknown      global       7      ||
+|| Val                  unknown      global       7      ||
+|| Sum                  unknown      global       6      ||
+|| Sum                  unknown      global       6      ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Val                  unknown      global       7      ||
+|| Val                  unknown      global       7      ||
+|| Count                unknown      global       5      ||
+|| Sum                  unknown      global       6      ||
+|| Val                  unknown      global       7      ||
+|| Sum                  unknown      global       6      ||
+|| Count                unknown      global       5      ||
+|| Val                  unknown      global       7      ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Val                  unknown      global       7      ||
+|| Count                unknown      global       5      ||
+|| Sum                  unknown      global       6      ||
+|| Count                unknown      global       5      ||
+|| Val                  unknown      global       7      ||
+|| Count                unknown      global       5      ||
+|| Sum                  unknown      global       6      ||
+|| Count                unknown      global       5      ||
+|| Val                  unknown      global       7      ||
+|| Flag                 unknown      global       10     ||
+|| Done                 unknown      global       11     ||
+|| Flag                 unknown      global       10     ||
+|| Done                 unknown      global       11     ||
+|| Flag                 unknown      global       10     ||
+|| Arr                  unknown      global       76     ||
+|| Arr                  unknown      global       76     ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Count                unknown      global       5      ||
+|| Add                  unknown      global       95     ||
+|| X                    unknown      global       95     ||
+|| Y                    unknown      global       95     ||
+|| X                    unknown      global       95     ||
+|| Y                    unknown      global       95     ||
+||============================================================||
+
+[ErrorHandler] No lexical errors detected.
+
+
+--- Running tests/test2.lang ---
+||============================================================||
+||                        TOKEN STREAM                        ||
+||============================================================||
+  <START, "start", Line: 3, Col: 1>
+  <FINISH, "finish", Line: 59, Col: 1>
+  <LOOP, "loop", Line: 16, Col: 5>
+  <CONDITION, "condition", Line: 21, Col: 9>
+  <CONDITION, "condition", Line: 25, Col: 9>
+  <CONDITION, "condition", Line: 32, Col: 5>
+  <CONDITION, "condition", Line: 41, Col: 5>
+  <CONDITION, "condition", Line: 49, Col: 9>
+  <DECLARE, "declare", Line: 5, Col: 5>
+  <DECLARE, "declare", Line: 6, Col: 5>
+  <DECLARE, "declare", Line: 7, Col: 5>
+  <DECLARE, "declare", Line: 13, Col: 5>
+  <DECLARE, "declare", Line: 31, Col: 5>
+  <OUTPUT, "output", Line: 18, Col: 9>
+  <OUTPUT, "output", Line: 43, Col: 9>
+  <OUTPUT, "output", Line: 44, Col: 9>
+  <OUTPUT, "output", Line: 57, Col: 5>
+  <FUNCTION, "function", Line: 47, Col: 5>
+  <RETURN, "return", Line: 51, Col: 13>
+  <RETURN, "return", Line: 53, Col: 9>
+  <BREAK, "break", Line: 27, Col: 13>
+  <CONTINUE, "continue", Line: 23, Col: 13>
+  <ELSE, "else", Line: 36, Col: 5>
+  <INTEGER, "100", Line: 5, Col: 20>
+  <INTEGER, "7", Line: 6, Col: 21>
+  <INTEGER, "0", Line: 7, Col: 22>
+  <INTEGER, "2", Line: 9, Col: 40>
+  <INTEGER, "3", Line: 9, Col: 46>
+  <INTEGER, "0", Line: 16, Col: 19>
+  <INTEGER, "2", Line: 21, Col: 28>
+  <INTEGER, "0", Line: 21, Col: 33>
+  <INTEGER, "1", Line: 25, Col: 29>
+  <INTEGER, "0", Line: 31, Col: 19>
+  <INTEGER, "0", Line: 32, Col: 42>
+  <INTEGER, "0", Line: 41, Col: 25>
+  <INTEGER, "1", Line: 49, Col: 25>
+  <INTEGER, "1", Line: 51, Col: 20>
+  <INTEGER, "1", Line: 53, Col: 34>
+  <FLOAT, "5.5e2", Line: 9, Col: 22>
+  <FLOAT, "-3.141592", Line: 13, Col: 20>
+  <FLOAT, "+2.0e1", Line: 14, Col: 19>
+  <IDENTIFIER, "Val1", Line: 5, Col: 13>
+  <IDENTIFIER, "Count", Line: 6, Col: 13>
+  <IDENTIFIER, "Result", Line: 7, Col: 13>
+  <IDENTIFIER, "Result", Line: 9, Col: 5>
+  <IDENTIFIER, "Val1", Line: 9, Col: 15>
+  <IDENTIFIER, "Count", Line: 9, Col: 32>
+  <IDENTIFIER, "Result", Line: 10, Col: 5>
+  <IDENTIFIER, "Result", Line: 10, Col: 14>
+  <IDENTIFIER, "Val1", Line: 10, Col: 24>
+  <IDENTIFIER, "Count", Line: 10, Col: 31>
+  <IDENTIFIER, "Result", Line: 11, Col: 5>
+  <IDENTIFIER, "Count", Line: 11, Col: 16>
+  <IDENTIFIER, "Count", Line: 11, Col: 24>
+  <IDENTIFIER, "Val1", Line: 11, Col: 33>
+  <IDENTIFIER, "Temp", Line: 13, Col: 13>
+  <IDENTIFIER, "Temp", Line: 14, Col: 5>
+  <IDENTIFIER, "Temp", Line: 14, Col: 12>
+  <IDENTIFIER, "Count", Line: 16, Col: 11>
+  <IDENTIFIER, "Count", Line: 18, Col: 16>
+  <IDENTIFIER, "Count", Line: 19, Col: 9>
+  <IDENTIFIER, "Count", Line: 21, Col: 20>
+  <IDENTIFIER, "Count", Line: 25, Col: 20>
+  <IDENTIFIER, "Max", Line: 31, Col: 13>
+  <IDENTIFIER, "Val1", Line: 32, Col: 16>
+  <IDENTIFIER, "Count", Line: 32, Col: 24>
+  <IDENTIFIER, "Result", Line: 32, Col: 33>
+  <IDENTIFIER, "Max", Line: 34, Col: 9>
+  <IDENTIFIER, "Val1", Line: 34, Col: 15>
+  <IDENTIFIER, "Max", Line: 38, Col: 9>
+  <IDENTIFIER, "Count", Line: 38, Col: 15>
+  <IDENTIFIER, "Max", Line: 41, Col: 18>
+  <IDENTIFIER, "Result", Line: 41, Col: 31>
+  <IDENTIFIER, "Val1", Line: 41, Col: 41>
+  <IDENTIFIER, "Max", Line: 43, Col: 16>
+  <IDENTIFIER, "Result", Line: 44, Col: 16>
+  <IDENTIFIER, "Factorial", Line: 47, Col: 14>
+  <IDENTIFIER, "N", Line: 47, Col: 24>
+  <IDENTIFIER, "N", Line: 49, Col: 20>
+  <IDENTIFIER, "N", Line: 53, Col: 16>
+  <IDENTIFIER, "Factorial", Line: 53, Col: 20>
+  <IDENTIFIER, "N", Line: 53, Col: 30>
+  <IDENTIFIER, "Result", Line: 56, Col: 5>
+  <IDENTIFIER, "Factorial", Line: 56, Col: 14>
+  <IDENTIFIER, "Val1", Line: 56, Col: 24>
+  <IDENTIFIER, "Result", Line: 57, Col: 12>
+  <PLUS, "+", Line: 9, Col: 29>
+  <MINUS, "-", Line: 10, Col: 29>
+  <MINUS, "-", Line: 11, Col: 31>
+  <MINUS, "-", Line: 53, Col: 32>
+  <MULTIPLY, "*", Line: 9, Col: 20>
+  <MULTIPLY, "*", Line: 11, Col: 22>
+  <MULTIPLY, "*", Line: 14, Col: 17>
+  <MULTIPLY, "*", Line: 53, Col: 18>
+  <DIVIDE, "/", Line: 10, Col: 21>
+  <MODULO, "%", Line: 9, Col: 38>
+  <MODULO, "%", Line: 21, Col: 26>
+  <POWER, "**", Line: 9, Col: 43>
+  <EQUAL, "==", Line: 21, Col: 30>
+  <EQUAL, "==", Line: 25, Col: 26>
+  <NOT_EQUAL, "!=", Line: 41, Col: 38>
+  <LESS_EQUAL, "<=", Line: 41, Col: 22>
+  <LESS_EQUAL, "<=", Line: 49, Col: 22>
+  <GREATER_EQUAL, ">=", Line: 32, Col: 21>
+  <GREATER_THAN, ">", Line: 16, Col: 17>
+  <GREATER_THAN, ">", Line: 32, Col: 40>
+  <LOGICAL_AND, "&&", Line: 32, Col: 30>
+  <LOGICAL_OR, "||", Line: 41, Col: 28>
+  <LOGICAL_NOT, "!", Line: 41, Col: 16>
+  <ASSIGN, "=", Line: 5, Col: 18>
+  <ASSIGN, "=", Line: 6, Col: 19>
+  <ASSIGN, "=", Line: 7, Col: 20>
+  <ASSIGN, "=", Line: 9, Col: 12>
+  <ASSIGN, "=", Line: 10, Col: 12>
+  <ASSIGN, "=", Line: 13, Col: 18>
+  <ASSIGN, "=", Line: 14, Col: 10>
+  <ASSIGN, "=", Line: 31, Col: 17>
+  <ASSIGN, "=", Line: 34, Col: 13>
+  <ASSIGN, "=", Line: 38, Col: 13>
+  <ASSIGN, "=", Line: 56, Col: 12>
+  <PLUS_ASSIGN, "+=", Line: 11, Col: 12>
+  <DECREMENT, "--", Line: 19, Col: 14>
+  <LPAREN, "(", Line: 9, Col: 14>
+  <LPAREN, "(", Line: 9, Col: 31>
+  <LPAREN, "(", Line: 10, Col: 23>
+  <LPAREN, "(", Line: 11, Col: 15>
+  <LPAREN, "(", Line: 16, Col: 10>
+  <LPAREN, "(", Line: 21, Col: 19>
+  <LPAREN, "(", Line: 25, Col: 19>
+  <LPAREN, "(", Line: 32, Col: 15>
+  <LPAREN, "(", Line: 41, Col: 15>
+  <LPAREN, "(", Line: 41, Col: 17>
+  <LPAREN, "(", Line: 47, Col: 23>
+  <LPAREN, "(", Line: 49, Col: 19>
+  <LPAREN, "(", Line: 53, Col: 29>
+  <LPAREN, "(", Line: 56, Col: 23>
+  <RPAREN, ")", Line: 9, Col: 27>
+  <RPAREN, ")", Line: 9, Col: 41>
+  <RPAREN, ")", Line: 10, Col: 36>
+  <RPAREN, ")", Line: 11, Col: 29>
+  <RPAREN, ")", Line: 16, Col: 20>
+  <RPAREN, ")", Line: 21, Col: 34>
+  <RPAREN, ")", Line: 25, Col: 30>
+  <RPAREN, ")", Line: 32, Col: 43>
+  <RPAREN, ")", Line: 41, Col: 26>
+  <RPAREN, ")", Line: 41, Col: 45>
+  <RPAREN, ")", Line: 47, Col: 25>
+  <RPAREN, ")", Line: 49, Col: 26>
+  <RPAREN, ")", Line: 53, Col: 35>
+  <RPAREN, ")", Line: 56, Col: 28>
+  <LBRACE, "{", Line: 4, Col: 1>
+  <LBRACE, "{", Line: 17, Col: 5>
+  <LBRACE, "{", Line: 22, Col: 9>
+  <LBRACE, "{", Line: 26, Col: 9>
+  <LBRACE, "{", Line: 33, Col: 5>
+  <LBRACE, "{", Line: 37, Col: 5>
+  <LBRACE, "{", Line: 42, Col: 5>
+  <LBRACE, "{", Line: 48, Col: 5>
+  <LBRACE, "{", Line: 50, Col: 9>
+  <RBRACE, "}", Line: 24, Col: 9>
+  <RBRACE, "}", Line: 28, Col: 9>
+  <RBRACE, "}", Line: 29, Col: 5>
+  <RBRACE, "}", Line: 35, Col: 5>
+  <RBRACE, "}", Line: 39, Col: 5>
+  <RBRACE, "}", Line: 45, Col: 5>
+  <RBRACE, "}", Line: 52, Col: 9>
+  <RBRACE, "}", Line: 54, Col: 5>
+  <RBRACE, "}", Line: 58, Col: 1>
+  <SEMICOLON, ";", Line: 5, Col: 23>
+  <SEMICOLON, ";", Line: 6, Col: 22>
+  <SEMICOLON, ";", Line: 7, Col: 23>
+  <SEMICOLON, ";", Line: 9, Col: 47>
+  <SEMICOLON, ";", Line: 10, Col: 37>
+  <SEMICOLON, ";", Line: 11, Col: 37>
+  <SEMICOLON, ";", Line: 13, Col: 29>
+  <SEMICOLON, ";", Line: 14, Col: 25>
+  <SEMICOLON, ";", Line: 18, Col: 21>
+  <SEMICOLON, ";", Line: 19, Col: 16>
+  <SEMICOLON, ";", Line: 23, Col: 21>
+  <SEMICOLON, ";", Line: 27, Col: 18>
+  <SEMICOLON, ";", Line: 31, Col: 20>
+  <SEMICOLON, ";", Line: 34, Col: 19>
+  <SEMICOLON, ";", Line: 38, Col: 20>
+  <SEMICOLON, ";", Line: 43, Col: 19>
+  <SEMICOLON, ";", Line: 44, Col: 22>
+  <SEMICOLON, ";", Line: 51, Col: 21>
+  <SEMICOLON, ";", Line: 53, Col: 36>
+  <SEMICOLON, ";", Line: 56, Col: 29>
+  <SEMICOLON, ";", Line: 57, Col: 18>
+  <COLON, ":", Line: 47, Col: 27>
+  <EOF, "EOF", Line: 60, Col: 1>
+||============================================================||
+||  Total tokens: 191                                          ||
+||============================================================||
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Val1                 unknown      global       5      ||
+|| Count                unknown      global       6      ||
+|| Result               unknown      global       7      ||
+|| Result               unknown      global       7      ||
+|| Val1                 unknown      global       5      ||
+|| Count                unknown      global       6      ||
+|| Result               unknown      global       7      ||
+|| Result               unknown      global       7      ||
+|| Val1                 unknown      global       5      ||
+|| Count                unknown      global       6      ||
+|| Result               unknown      global       7      ||
+|| Count                unknown      global       6      ||
+|| Count                unknown      global       6      ||
+|| Val1                 unknown      global       5      ||
+|| Temp                 unknown      global       13     ||
+|| Temp                 unknown      global       13     ||
+|| Temp                 unknown      global       13     ||
+|| Count                unknown      global       6      ||
+|| Count                unknown      global       6      ||
+|| Count                unknown      global       6      ||
+|| Count                unknown      global       6      ||
+|| Count                unknown      global       6      ||
+|| Max                  unknown      global       31     ||
+|| Val1                 unknown      global       5      ||
+|| Count                unknown      global       6      ||
+|| Result               unknown      global       7      ||
+|| Max                  unknown      global       31     ||
+|| Val1                 unknown      global       5      ||
+|| Max                  unknown      global       31     ||
+|| Count                unknown      global       6      ||
+|| Max                  unknown      global       31     ||
+|| Result               unknown      global       7      ||
+|| Val1                 unknown      global       5      ||
+|| Max                  unknown      global       31     ||
+|| Result               unknown      global       7      ||
+|| Factorial            unknown      global       47     ||
+|| N                    unknown      global       47     ||
+|| N                    unknown      global       47     ||
+|| N                    unknown      global       47     ||
+|| Factorial            unknown      global       47     ||
+|| N                    unknown      global       47     ||
+|| Result               unknown      global       7      ||
+|| Factorial            unknown      global       47     ||
+|| Val1                 unknown      global       5      ||
+|| Result               unknown      global       7      ||
+||============================================================||
+
+[ErrorHandler] No lexical errors detected.
+
+
+--- Running tests/test3.lang ---
+||============================================================||
+||                        TOKEN STREAM                        ||
+||============================================================||
+  <START, "start", Line: 3, Col: 1>
+  <FINISH, "finish", Line: 45, Col: 1>
+  <DECLARE, "declare", Line: 5, Col: 5>
+  <DECLARE, "declare", Line: 7, Col: 5>
+  <DECLARE, "declare", Line: 9, Col: 5>
+  <DECLARE, "declare", Line: 11, Col: 5>
+  <DECLARE, "declare", Line: 13, Col: 5>
+  <DECLARE, "declare", Line: 15, Col: 5>
+  <DECLARE, "declare", Line: 19, Col: 5>
+  <DECLARE, "declare", Line: 29, Col: 5>
+  <DECLARE, "declare", Line: 30, Col: 5>
+  <DECLARE, "declare", Line: 31, Col: 5>
+  <DECLARE, "declare", Line: 32, Col: 5>
+  <DECLARE, "declare", Line: 33, Col: 5>
+  <DECLARE, "declare", Line: 34, Col: 5>
+  <DECLARE, "declare", Line: 35, Col: 5>
+  <OUTPUT, "output", Line: 21, Col: 5>
+  <OUTPUT, "output", Line: 22, Col: 5>
+  <OUTPUT, "output", Line: 23, Col: 5>
+  <OUTPUT, "output", Line: 24, Col: 5>
+  <OUTPUT, "output", Line: 25, Col: 5>
+  <OUTPUT, "output", Line: 26, Col: 5>
+  <OUTPUT, "output", Line: 27, Col: 5>
+  <OUTPUT, "output", Line: 37, Col: 5>
+  <OUTPUT, "output", Line: 38, Col: 5>
+  <OUTPUT, "output", Line: 39, Col: 5>
+  <OUTPUT, "output", Line: 40, Col: 5>
+  <OUTPUT, "output", Line: 41, Col: 5>
+  <OUTPUT, "output", Line: 42, Col: 5>
+  <OUTPUT, "output", Line: 43, Col: 5>
+  <STRING, "$Hello World$", Line: 5, Col: 19>
+  <STRING, "$Line\nBreak$", Line: 7, Col: 23>
+  <STRING, "$Quote\"Here$", Line: 9, Col: 22>
+  <STRING, "$Col1\tCol2\tCol3$", Line: 11, Col: 22>
+  <STRING, "$Path\\File$", Line: 13, Col: 25>
+  <STRING, "$This is
+a multi-line
+string literal$", Line: 15, Col: 21>
+  <STRING, "$Carriage\rReturn$", Line: 19, Col: 18>
+  <CHAR, "'a'", Line: 29, Col: 19>
+  <CHAR, "'Z'", Line: 30, Col: 19>
+  <CHAR, "'9'", Line: 31, Col: 19>
+  <CHAR, "'\t'", Line: 32, Col: 19>
+  <CHAR, "'\n'", Line: 33, Col: 19>
+  <CHAR, "'\\'", Line: 34, Col: 19>
+  <CHAR, "'\''", Line: 35, Col: 19>
+  <IDENTIFIER, "Msg", Line: 5, Col: 13>
+  <IDENTIFIER, "Escaped", Line: 7, Col: 13>
+  <IDENTIFIER, "Quoted", Line: 9, Col: 13>
+  <IDENTIFIER, "Tabbed", Line: 11, Col: 13>
+  <IDENTIFIER, "Backslash", Line: 13, Col: 13>
+  <IDENTIFIER, "Multi", Line: 15, Col: 13>
+  <IDENTIFIER, "Cr", Line: 19, Col: 13>
+  <IDENTIFIER, "Msg", Line: 21, Col: 12>
+  <IDENTIFIER, "Escaped", Line: 22, Col: 12>
+  <IDENTIFIER, "Quoted", Line: 23, Col: 12>
+  <IDENTIFIER, "Tabbed", Line: 24, Col: 12>
+  <IDENTIFIER, "Backslash", Line: 25, Col: 12>
+  <IDENTIFIER, "Multi", Line: 26, Col: 12>
+  <IDENTIFIER, "Cr", Line: 27, Col: 12>
+  <IDENTIFIER, "Ch1", Line: 29, Col: 13>
+  <IDENTIFIER, "Ch2", Line: 30, Col: 13>
+  <IDENTIFIER, "Ch3", Line: 31, Col: 13>
+  <IDENTIFIER, "Ch4", Line: 32, Col: 13>
+  <IDENTIFIER, "Ch5", Line: 33, Col: 13>
+  <IDENTIFIER, "Ch6", Line: 34, Col: 13>
+  <IDENTIFIER, "Ch7", Line: 35, Col: 13>
+  <IDENTIFIER, "Ch1", Line: 37, Col: 12>
+  <IDENTIFIER, "Ch2", Line: 38, Col: 12>
+  <IDENTIFIER, "Ch3", Line: 39, Col: 12>
+  <IDENTIFIER, "Ch4", Line: 40, Col: 12>
+  <IDENTIFIER, "Ch5", Line: 41, Col: 12>
+  <IDENTIFIER, "Ch6", Line: 42, Col: 12>
+  <IDENTIFIER, "Ch7", Line: 43, Col: 12>
+  <ASSIGN, "=", Line: 5, Col: 17>
+  <ASSIGN, "=", Line: 7, Col: 21>
+  <ASSIGN, "=", Line: 9, Col: 20>
+  <ASSIGN, "=", Line: 11, Col: 20>
+  <ASSIGN, "=", Line: 13, Col: 23>
+  <ASSIGN, "=", Line: 15, Col: 19>
+  <ASSIGN, "=", Line: 19, Col: 16>
+  <ASSIGN, "=", Line: 29, Col: 17>
+  <ASSIGN, "=", Line: 30, Col: 17>
+  <ASSIGN, "=", Line: 31, Col: 17>
+  <ASSIGN, "=", Line: 32, Col: 17>
+  <ASSIGN, "=", Line: 33, Col: 17>
+  <ASSIGN, "=", Line: 34, Col: 17>
+  <ASSIGN, "=", Line: 35, Col: 17>
+  <LBRACE, "{", Line: 4, Col: 1>
+  <RBRACE, "}", Line: 44, Col: 1>
+  <SEMICOLON, ";", Line: 5, Col: 32>
+  <SEMICOLON, ";", Line: 7, Col: 36>
+  <SEMICOLON, ";", Line: 9, Col: 35>
+  <SEMICOLON, ";", Line: 11, Col: 40>
+  <SEMICOLON, ";", Line: 13, Col: 37>
+  <SEMICOLON, ";", Line: 17, Col: 16>
+  <SEMICOLON, ";", Line: 19, Col: 36>
+  <SEMICOLON, ";", Line: 21, Col: 15>
+  <SEMICOLON, ";", Line: 22, Col: 19>
+  <SEMICOLON, ";", Line: 23, Col: 18>
+  <SEMICOLON, ";", Line: 24, Col: 18>
+  <SEMICOLON, ";", Line: 25, Col: 21>
+  <SEMICOLON, ";", Line: 26, Col: 17>
+  <SEMICOLON, ";", Line: 27, Col: 14>
+  <SEMICOLON, ";", Line: 29, Col: 22>
+  <SEMICOLON, ";", Line: 30, Col: 22>
+  <SEMICOLON, ";", Line: 31, Col: 22>
+  <SEMICOLON, ";", Line: 32, Col: 23>
+  <SEMICOLON, ";", Line: 33, Col: 23>
+  <SEMICOLON, ";", Line: 34, Col: 23>
+  <SEMICOLON, ";", Line: 35, Col: 23>
+  <SEMICOLON, ";", Line: 37, Col: 15>
+  <SEMICOLON, ";", Line: 38, Col: 15>
+  <SEMICOLON, ";", Line: 39, Col: 15>
+  <SEMICOLON, ";", Line: 40, Col: 15>
+  <SEMICOLON, ";", Line: 41, Col: 15>
+  <SEMICOLON, ";", Line: 42, Col: 15>
+  <SEMICOLON, ";", Line: 43, Col: 15>
+  <EOF, "EOF", Line: 46, Col: 1>
+||============================================================||
+||  Total tokens: 117                                          ||
+||============================================================||
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Msg                  unknown      global       5      ||
+|| Escaped              unknown      global       7      ||
+|| Quoted               unknown      global       9      ||
+|| Tabbed               unknown      global       11     ||
+|| Backslash            unknown      global       13     ||
+|| Multi                unknown      global       15     ||
+|| Cr                   unknown      global       19     ||
+|| Msg                  unknown      global       5      ||
+|| Escaped              unknown      global       7      ||
+|| Quoted               unknown      global       9      ||
+|| Tabbed               unknown      global       11     ||
+|| Backslash            unknown      global       13     ||
+|| Multi                unknown      global       15     ||
+|| Cr                   unknown      global       19     ||
+|| Ch1                  unknown      global       29     ||
+|| Ch2                  unknown      global       30     ||
+|| Ch3                  unknown      global       31     ||
+|| Ch4                  unknown      global       32     ||
+|| Ch5                  unknown      global       33     ||
+|| Ch6                  unknown      global       34     ||
+|| Ch7                  unknown      global       35     ||
+|| Ch1                  unknown      global       29     ||
+|| Ch2                  unknown      global       30     ||
+|| Ch3                  unknown      global       31     ||
+|| Ch4                  unknown      global       32     ||
+|| Ch5                  unknown      global       33     ||
+|| Ch6                  unknown      global       34     ||
+|| Ch7                  unknown      global       35     ||
+||============================================================||
+
+[ErrorHandler] No lexical errors detected.
+
+
+--- Running tests/test4.lang ---
+||============================================================||
+||                        TOKEN STREAM                        ||
+||============================================================||
+  <START, "start", Line: 3, Col: 1>
+  <DECLARE, "declare", Line: 6, Col: 5>
+  <DECLARE, "declare", Line: 9, Col: 5>
+  <DECLARE, "declare", Line: 12, Col: 5>
+  <DECLARE, "declare", Line: 15, Col: 5>
+  <INTEGER, "5", Line: 6, Col: 26>
+  <INTEGER, "10", Line: 9, Col: 21>
+  <INTEGER, "5", Line: 9, Col: 26>
+  <STRING, "$this string never ends;
+
+    ## Error 5: invalid escape sequence in string
+    declare Esc = $", Line: 15, Col: 22>
+  <IDENTIFIER, "Count", Line: 9, Col: 13>
+  <IDENTIFIER, "Bad_float", Line: 12, Col: 13>
+  <IDENTIFIER, "Broken", Line: 15, Col: 13>
+  <ASSIGN, "=", Line: 6, Col: 24>
+  <ASSIGN, "=", Line: 9, Col: 19>
+  <ASSIGN, "=", Line: 12, Col: 23>
+  <ASSIGN, "=", Line: 15, Col: 20>
+  <LBRACE, "{", Line: 4, Col: 1>
+  <SEMICOLON, ";", Line: 6, Col: 27>
+  <SEMICOLON, ";", Line: 9, Col: 27>
+  <SEMICOLON, ";", Line: 12, Col: 34>
+  <EOF, "EOF", Line: 36, Col: 1>
+  <ERROR, "invalidVar", Line: 6, Col: 13>
+  <ERROR, "@", Line: 9, Col: 24>
+  <ERROR, "3.1234567", Line: 12, Col: 25>
+  <ERROR, "bad", Line: 18, Col: 20>
+  <ERROR, "\", Line: 18, Col: 24>
+  <ERROR, "x", Line: 18, Col: 25>
+  <ERROR, "escape", Line: 18, Col: 27>
+  <ERROR, "$;
+
+    ## Error 6: identifier too long (over 31 chars)
+    declare Abcdefghijklmnopqrstuvwxyz_extra = 99;
+
+    ## Error 7: unclosed char literal
+    declare Ch = '
+
+    ## Error 8: empty char literal
+    declare Empty = '';
+
+    ## Error 9: multi-char inside char literal
+    declare Multi = 'ab';
+
+    ## Error 10: another illegal character
+    declare Tilde = ~5;
+}
+finish
+", Line: 18, Col: 33>
+||============================================================||
+||  Total tokens: 29                                           ||
+||============================================================||
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Count                unknown      global       9      ||
+|| Bad_float            unknown      global       12     ||
+|| Broken               unknown      global       15     ||
+||============================================================||
+
+||============================================================||
+||                     LEXICAL ERRORS                         ||
+||============================================================||
+||  Error: [Invalid Identifier] at Line 6, Col 13: Lexeme "invalidVar" - Identifiers must start with an uppercase letter [A-Z].
+||  Error: [Invalid Character] at Line 9, Col 24: Lexeme "@" - Character is not part of the language alphabet.
+||  Error: [Malformed Literal] at Line 12, Col 25: Lexeme "3.1234567" - Float literal exceeds maximum of 6 decimal digits.
+||  Error: [Invalid Identifier] at Line 18, Col 20: Lexeme "bad" - Identifiers must start with an uppercase letter [A-Z].
+||  Error: [Invalid Character] at Line 18, Col 24: Lexeme "\" - Character is not part of the language alphabet.
+||  Error: [Invalid Identifier] at Line 18, Col 25: Lexeme "x" - Identifiers must start with an uppercase letter [A-Z].
+||  Error: [Invalid Identifier] at Line 18, Col 27: Lexeme "escape" - Identifiers must start with an uppercase letter [A-Z].
+||  Error: [Unclosed String] at Line 18, Col 33: Lexeme "$;
+
+    ## Error 6: identifier too long (over 31 chars)
+    declare Abcdefghijklmnopqrstuvwxyz_extra = 99;
+
+    ## Error 7: unclosed char literal
+    declare Ch = '
+
+    ## Error 8: empty char literal
+    declare Empty = '';
+
+    ## Error 9: multi-char inside char literal
+    declare Multi = 'ab';
+
+    ## Error 10: another illegal character
+    declare Tilde = ~5;
+}
+finish
+" - String literal was never terminated.
+||============================================================||
+||  Total errors: 8                                            ||
+||============================================================||
+
+
+--- Running tests/test5.lang ---
+||============================================================||
+||                        TOKEN STREAM                        ||
+||============================================================||
+  <START, "start", Line: 4, Col: 1>
+  <FINISH, "finish", Line: 43, Col: 1>
+  <LOOP, "loop", Line: 29, Col: 5>
+  <CONDITION, "condition", Line: 33, Col: 9>
+  <DECLARE, "declare", Line: 7, Col: 5>
+  <DECLARE, "declare", Line: 22, Col: 5>
+  <OUTPUT, "output", Line: 18, Col: 5>
+  <OUTPUT, "output", Line: 37, Col: 9>
+  <OUTPUT, "output", Line: 41, Col: 5>
+  <CONTINUE, "continue", Line: 35, Col: 13>
+  <INTEGER, "0", Line: 7, Col: 21>
+  <INTEGER, "1", Line: 15, Col: 21>
+  <INTEGER, "42", Line: 22, Col: 19>
+  <INTEGER, "2", Line: 33, Col: 28>
+  <INTEGER, "0", Line: 33, Col: 33>
+  <STRING, "$done$", Line: 41, Col: 12>
+  <IDENTIFIER, "Count", Line: 7, Col: 13>
+  <IDENTIFIER, "Count", Line: 15, Col: 5>
+  <IDENTIFIER, "Count", Line: 15, Col: 13>
+  <IDENTIFIER, "Count", Line: 18, Col: 12>
+  <IDENTIFIER, "Val", Line: 22, Col: 13>
+  <IDENTIFIER, "Count", Line: 29, Col: 11>
+  <IDENTIFIER, "Val", Line: 29, Col: 19>
+  <IDENTIFIER, "Count", Line: 31, Col: 9>
+  <IDENTIFIER, "Count", Line: 33, Col: 20>
+  <IDENTIFIER, "Count", Line: 37, Col: 16>
+  <PLUS, "+", Line: 15, Col: 19>
+  <MODULO, "%", Line: 33, Col: 26>
+  <EQUAL, "==", Line: 33, Col: 30>
+  <LESS_THAN, "<", Line: 29, Col: 17>
+  <ASSIGN, "=", Line: 7, Col: 19>
+  <ASSIGN, "=", Line: 15, Col: 11>
+  <ASSIGN, "=", Line: 22, Col: 17>
+  <INCREMENT, "++", Line: 31, Col: 14>
+  <LPAREN, "(", Line: 29, Col: 10>
+  <LPAREN, "(", Line: 33, Col: 19>
+  <RPAREN, ")", Line: 29, Col: 22>
+  <RPAREN, ")", Line: 33, Col: 34>
+  <LBRACE, "{", Line: 5, Col: 1>
+  <LBRACE, "{", Line: 30, Col: 5>
+  <LBRACE, "{", Line: 34, Col: 9>
+  <RBRACE, "}", Line: 36, Col: 9>
+  <RBRACE, "}", Line: 38, Col: 5>
+  <RBRACE, "}", Line: 42, Col: 1>
+  <SEMICOLON, ";", Line: 7, Col: 22>
+  <SEMICOLON, ";", Line: 15, Col: 22>
+  <SEMICOLON, ";", Line: 18, Col: 17>
+  <SEMICOLON, ";", Line: 22, Col: 21>
+  <SEMICOLON, ";", Line: 31, Col: 16>
+  <SEMICOLON, ";", Line: 35, Col: 21>
+  <SEMICOLON, ";", Line: 37, Col: 21>
+  <SEMICOLON, ";", Line: 41, Col: 18>
+  <EOF, "EOF", Line: 45, Col: 1>
+||============================================================||
+||  Total tokens: 53                                           ||
+||============================================================||
+
+||============================================================||
+||                        SYMBOL TABLE                        ||
+||============================================================||
+|| Name                 Type         Scope        Line   ||
+||============================================================||
+|| Count                unknown      global       7      ||
+|| Count                unknown      global       7      ||
+|| Count                unknown      global       7      ||
+|| Count                unknown      global       7      ||
+|| Val                  unknown      global       22     ||
+|| Count                unknown      global       7      ||
+|| Val                  unknown      global       22     ||
+|| Count                unknown      global       7      ||
+|| Count                unknown      global       7      ||
+|| Count                unknown      global       7      ||
+||============================================================||
+
+[ErrorHandler] No lexical errors detected.
+
+=== ALL TESTS COMPLETE ===
+Results written to TestResults.txt

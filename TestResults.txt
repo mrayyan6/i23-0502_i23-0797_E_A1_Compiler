@@ -280,63 +280,63 @@
 ||============================================================||
 || Name                 Type         Scope        Line   ||
 ||============================================================||
-|| Count                unknown      global       5      ||
-|| Sum                  unknown      global       6      ||
-|| Val                  unknown      global       7      ||
-|| Pi                   unknown      global       8      ||
-|| Big                  unknown      global       9      ||
-|| Flag                 unknown      global       10     ||
-|| Done                 unknown      global       11     ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Sum                  unknown      global       6      ||
-|| Sum                  unknown      global       6      ||
-|| Val                  unknown      global       7      ||
-|| Val                  unknown      global       7      ||
-|| Val                  unknown      global       7      ||
-|| Sum                  unknown      global       6      ||
-|| Sum                  unknown      global       6      ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Val                  unknown      global       7      ||
-|| Val                  unknown      global       7      ||
-|| Count                unknown      global       5      ||
-|| Sum                  unknown      global       6      ||
-|| Val                  unknown      global       7      ||
-|| Sum                  unknown      global       6      ||
-|| Count                unknown      global       5      ||
-|| Val                  unknown      global       7      ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Val                  unknown      global       7      ||
-|| Count                unknown      global       5      ||
-|| Sum                  unknown      global       6      ||
-|| Count                unknown      global       5      ||
-|| Val                  unknown      global       7      ||
-|| Count                unknown      global       5      ||
-|| Sum                  unknown      global       6      ||
-|| Count                unknown      global       5      ||
-|| Val                  unknown      global       7      ||
-|| Flag                 unknown      global       10     ||
-|| Done                 unknown      global       11     ||
-|| Flag                 unknown      global       10     ||
-|| Done                 unknown      global       11     ||
-|| Flag                 unknown      global       10     ||
-|| Arr                  unknown      global       76     ||
-|| Arr                  unknown      global       76     ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Count                unknown      global       5      ||
-|| Add                  unknown      global       95     ||
-|| X                    unknown      global       95     ||
-|| Y                    unknown      global       95     ||
-|| X                    unknown      global       95     ||
-|| Y                    unknown      global       95     ||
+|| Count                N/A          Global       5      ||
+|| Sum                  N/A          Global       6      ||
+|| Val                  N/A          Global       7      ||
+|| Pi                   N/A          Global       8      ||
+|| Big                  N/A          Global       9      ||
+|| Flag                 N/A          Global       10     ||
+|| Done                 N/A          Global       11     ||
+|| Count                N/A          Global       13     ||
+|| Count                N/A          Global       13     ||
+|| Sum                  N/A          Global       14     ||
+|| Sum                  N/A          Global       14     ||
+|| Val                  N/A          Global       14     ||
+|| Val                  N/A          Global       15     ||
+|| Val                  N/A          Global       15     ||
+|| Sum                  N/A          Global       16     ||
+|| Sum                  N/A          Global       16     ||
+|| Count                N/A          Global       16     ||
+|| Count                N/A          Global       17     ||
+|| Count                N/A          Global       17     ||
+|| Val                  N/A          Global       18     ||
+|| Val                  N/A          Global       18     ||
+|| Count                N/A          Global       20     ||
+|| Sum                  N/A          Global       21     ||
+|| Val                  N/A          Global       22     ||
+|| Sum                  N/A          Global       23     ||
+|| Count                N/A          Global       24     ||
+|| Val                  N/A          Global       25     ||
+|| Count                N/A          Global       27     ||
+|| Count                N/A          Global       36     ||
+|| Val                  N/A          Global       36     ||
+|| Count                N/A          Global       41     ||
+|| Sum                  N/A          Global       41     ||
+|| Count                N/A          Global       46     ||
+|| Val                  N/A          Global       46     ||
+|| Count                N/A          Global       51     ||
+|| Sum                  N/A          Global       51     ||
+|| Count                N/A          Global       56     ||
+|| Val                  N/A          Global       56     ||
+|| Flag                 N/A          Global       61     ||
+|| Done                 N/A          Global       61     ||
+|| Flag                 N/A          Global       66     ||
+|| Done                 N/A          Global       66     ||
+|| Flag                 N/A          Global       71     ||
+|| Arr                  N/A          Global       76     ||
+|| Arr                  N/A          Global       77     ||
+|| Count                N/A          Global       79     ||
+|| Count                N/A          Global       80     ||
+|| Count                N/A          Global       82     ||
+|| Count                N/A          Global       84     ||
+|| Count                N/A          Global       84     ||
+|| Count                N/A          Global       85     ||
+|| Count                N/A          Global       89     ||
+|| Add                  N/A          Global       95     ||
+|| X                    N/A          Global       95     ||
+|| Y                    N/A          Global       95     ||
+|| X                    N/A          Global       95     ||
+|| Y                    N/A          Global       95     ||
 ||============================================================||
 
 [ErrorHandler] No lexical errors detected.
@@ -546,51 +546,51 @@
 ||============================================================||
 || Name                 Type         Scope        Line   ||
 ||============================================================||
-|| Val1                 unknown      global       5      ||
-|| Count                unknown      global       6      ||
-|| Result               unknown      global       7      ||
-|| Result               unknown      global       7      ||
-|| Val1                 unknown      global       5      ||
-|| Count                unknown      global       6      ||
-|| Result               unknown      global       7      ||
-|| Result               unknown      global       7      ||
-|| Val1                 unknown      global       5      ||
-|| Count                unknown      global       6      ||
-|| Result               unknown      global       7      ||
-|| Count                unknown      global       6      ||
-|| Count                unknown      global       6      ||
-|| Val1                 unknown      global       5      ||
-|| Temp                 unknown      global       13     ||
-|| Temp                 unknown      global       13     ||
-|| Temp                 unknown      global       13     ||
-|| Count                unknown      global       6      ||
-|| Count                unknown      global       6      ||
-|| Count                unknown      global       6      ||
-|| Count                unknown      global       6      ||
-|| Count                unknown      global       6      ||
-|| Max                  unknown      global       31     ||
-|| Val1                 unknown      global       5      ||
-|| Count                unknown      global       6      ||
-|| Result               unknown      global       7      ||
-|| Max                  unknown      global       31     ||
-|| Val1                 unknown      global       5      ||
-|| Max                  unknown      global       31     ||
-|| Count                unknown      global       6      ||
-|| Max                  unknown      global       31     ||
-|| Result               unknown      global       7      ||
-|| Val1                 unknown      global       5      ||
-|| Max                  unknown      global       31     ||
-|| Result               unknown      global       7      ||
-|| Factorial            unknown      global       47     ||
-|| N                    unknown      global       47     ||
-|| N                    unknown      global       47     ||
-|| N                    unknown      global       47     ||
-|| Factorial            unknown      global       47     ||
-|| N                    unknown      global       47     ||
-|| Result               unknown      global       7      ||
-|| Factorial            unknown      global       47     ||
-|| Val1                 unknown      global       5      ||
-|| Result               unknown      global       7      ||
+|| Val1                 N/A          Global       5      ||
+|| Count                N/A          Global       6      ||
+|| Result               N/A          Global       7      ||
+|| Result               N/A          Global       9      ||
+|| Val1                 N/A          Global       9      ||
+|| Count                N/A          Global       9      ||
+|| Result               N/A          Global       10     ||
+|| Result               N/A          Global       10     ||
+|| Val1                 N/A          Global       10     ||
+|| Count                N/A          Global       10     ||
+|| Result               N/A          Global       11     ||
+|| Count                N/A          Global       11     ||
+|| Count                N/A          Global       11     ||
+|| Val1                 N/A          Global       11     ||
+|| Temp                 N/A          Global       13     ||
+|| Temp                 N/A          Global       14     ||
+|| Temp                 N/A          Global       14     ||
+|| Count                N/A          Global       16     ||
+|| Count                N/A          Global       18     ||
+|| Count                N/A          Global       19     ||
+|| Count                N/A          Global       21     ||
+|| Count                N/A          Global       25     ||
+|| Max                  N/A          Global       31     ||
+|| Val1                 N/A          Global       32     ||
+|| Count                N/A          Global       32     ||
+|| Result               N/A          Global       32     ||
+|| Max                  N/A          Global       34     ||
+|| Val1                 N/A          Global       34     ||
+|| Max                  N/A          Global       38     ||
+|| Count                N/A          Global       38     ||
+|| Max                  N/A          Global       41     ||
+|| Result               N/A          Global       41     ||
+|| Val1                 N/A          Global       41     ||
+|| Max                  N/A          Global       43     ||
+|| Result               N/A          Global       44     ||
+|| Factorial            N/A          Global       47     ||
+|| N                    N/A          Global       47     ||
+|| N                    N/A          Global       49     ||
+|| N                    N/A          Global       53     ||
+|| Factorial            N/A          Global       53     ||
+|| N                    N/A          Global       53     ||
+|| Result               N/A          Global       56     ||
+|| Factorial            N/A          Global       56     ||
+|| Val1                 N/A          Global       56     ||
+|| Result               N/A          Global       57     ||
 ||============================================================||
 
 [ErrorHandler] No lexical errors detected.
@@ -627,100 +627,93 @@
   <ASSIGN, "=", Line: 13, Col: 23>
   <STRING, ""Path\\File"", Line: 13, Col: 25>
   <SEMICOLON, ";", Line: 13, Col: 37>
-  <DECLARE, "declare", Line: 15, Col: 5>
-  <IDENTIFIER, "Multi", Line: 15, Col: 13>
-  <ASSIGN, "=", Line: 15, Col: 19>
-  <STRING, ""This is
-a multi-line
-string literal"", Line: 15, Col: 21>
-  <SEMICOLON, ";", Line: 17, Col: 16>
-  <DECLARE, "declare", Line: 19, Col: 5>
-  <IDENTIFIER, "Cr", Line: 19, Col: 13>
-  <ASSIGN, "=", Line: 19, Col: 16>
-  <STRING, ""Carriage\rReturn"", Line: 19, Col: 18>
-  <SEMICOLON, ";", Line: 19, Col: 36>
+  <DECLARE, "declare", Line: 16, Col: 5>
+  <IDENTIFIER, "Cr", Line: 16, Col: 13>
+  <ASSIGN, "=", Line: 16, Col: 16>
+  <STRING, ""Carriage\rReturn"", Line: 16, Col: 18>
+  <SEMICOLON, ";", Line: 16, Col: 36>
+  <OUTPUT, "output", Line: 18, Col: 5>
+  <IDENTIFIER, "Msg", Line: 18, Col: 12>
+  <SEMICOLON, ";", Line: 18, Col: 15>
+  <OUTPUT, "output", Line: 19, Col: 5>
+  <IDENTIFIER, "Escaped", Line: 19, Col: 12>
+  <SEMICOLON, ";", Line: 19, Col: 19>
+  <OUTPUT, "output", Line: 20, Col: 5>
+  <IDENTIFIER, "Quoted", Line: 20, Col: 12>
+  <SEMICOLON, ";", Line: 20, Col: 18>
   <OUTPUT, "output", Line: 21, Col: 5>
-  <IDENTIFIER, "Msg", Line: 21, Col: 12>
-  <SEMICOLON, ";", Line: 21, Col: 15>
+  <IDENTIFIER, "Tabbed", Line: 21, Col: 12>
+  <SEMICOLON, ";", Line: 21, Col: 18>
   <OUTPUT, "output", Line: 22, Col: 5>
-  <IDENTIFIER, "Escaped", Line: 22, Col: 12>
-  <SEMICOLON, ";", Line: 22, Col: 19>
+  <IDENTIFIER, "Backslash", Line: 22, Col: 12>
+  <SEMICOLON, ";", Line: 22, Col: 21>
   <OUTPUT, "output", Line: 23, Col: 5>
-  <IDENTIFIER, "Quoted", Line: 23, Col: 12>
-  <SEMICOLON, ";", Line: 23, Col: 18>
+  <IDENTIFIER, "Multi", Line: 23, Col: 12>
+  <SEMICOLON, ";", Line: 23, Col: 17>
   <OUTPUT, "output", Line: 24, Col: 5>
-  <IDENTIFIER, "Tabbed", Line: 24, Col: 12>
-  <SEMICOLON, ";", Line: 24, Col: 18>
-  <OUTPUT, "output", Line: 25, Col: 5>
-  <IDENTIFIER, "Backslash", Line: 25, Col: 12>
-  <SEMICOLON, ";", Line: 25, Col: 21>
-  <OUTPUT, "output", Line: 26, Col: 5>
-  <IDENTIFIER, "Multi", Line: 26, Col: 12>
-  <SEMICOLON, ";", Line: 26, Col: 17>
-  <OUTPUT, "output", Line: 27, Col: 5>
-  <IDENTIFIER, "Cr", Line: 27, Col: 12>
-  <SEMICOLON, ";", Line: 27, Col: 14>
+  <IDENTIFIER, "Cr", Line: 24, Col: 12>
+  <SEMICOLON, ";", Line: 24, Col: 14>
+  <DECLARE, "declare", Line: 26, Col: 5>
+  <IDENTIFIER, "Ch1", Line: 26, Col: 13>
+  <ASSIGN, "=", Line: 26, Col: 17>
+  <CHAR, "'a'", Line: 26, Col: 19>
+  <SEMICOLON, ";", Line: 26, Col: 22>
+  <DECLARE, "declare", Line: 27, Col: 5>
+  <IDENTIFIER, "Ch2", Line: 27, Col: 13>
+  <ASSIGN, "=", Line: 27, Col: 17>
+  <CHAR, "'Z'", Line: 27, Col: 19>
+  <SEMICOLON, ";", Line: 27, Col: 22>
+  <DECLARE, "declare", Line: 28, Col: 5>
+  <IDENTIFIER, "Ch3", Line: 28, Col: 13>
+  <ASSIGN, "=", Line: 28, Col: 17>
+  <CHAR, "'9'", Line: 28, Col: 19>
+  <SEMICOLON, ";", Line: 28, Col: 22>
   <DECLARE, "declare", Line: 29, Col: 5>
-  <IDENTIFIER, "Ch1", Line: 29, Col: 13>
+  <IDENTIFIER, "Ch4", Line: 29, Col: 13>
   <ASSIGN, "=", Line: 29, Col: 17>
-  <CHAR, "'a'", Line: 29, Col: 19>
-  <SEMICOLON, ";", Line: 29, Col: 22>
+  <CHAR, "'\t'", Line: 29, Col: 19>
+  <SEMICOLON, ";", Line: 29, Col: 23>
   <DECLARE, "declare", Line: 30, Col: 5>
-  <IDENTIFIER, "Ch2", Line: 30, Col: 13>
+  <IDENTIFIER, "Ch5", Line: 30, Col: 13>
   <ASSIGN, "=", Line: 30, Col: 17>
-  <CHAR, "'Z'", Line: 30, Col: 19>
-  <SEMICOLON, ";", Line: 30, Col: 22>
+  <CHAR, "'\n'", Line: 30, Col: 19>
+  <SEMICOLON, ";", Line: 30, Col: 23>
   <DECLARE, "declare", Line: 31, Col: 5>
-  <IDENTIFIER, "Ch3", Line: 31, Col: 13>
+  <IDENTIFIER, "Ch6", Line: 31, Col: 13>
   <ASSIGN, "=", Line: 31, Col: 17>
-  <CHAR, "'9'", Line: 31, Col: 19>
-  <SEMICOLON, ";", Line: 31, Col: 22>
+  <CHAR, "'\\'", Line: 31, Col: 19>
+  <SEMICOLON, ";", Line: 31, Col: 23>
   <DECLARE, "declare", Line: 32, Col: 5>
-  <IDENTIFIER, "Ch4", Line: 32, Col: 13>
+  <IDENTIFIER, "Ch7", Line: 32, Col: 13>
   <ASSIGN, "=", Line: 32, Col: 17>
-  <CHAR, "'\t'", Line: 32, Col: 19>
+  <CHAR, "'\''", Line: 32, Col: 19>
   <SEMICOLON, ";", Line: 32, Col: 23>
-  <DECLARE, "declare", Line: 33, Col: 5>
-  <IDENTIFIER, "Ch5", Line: 33, Col: 13>
-  <ASSIGN, "=", Line: 33, Col: 17>
-  <CHAR, "'\n'", Line: 33, Col: 19>
-  <SEMICOLON, ";", Line: 33, Col: 23>
-  <DECLARE, "declare", Line: 34, Col: 5>
-  <IDENTIFIER, "Ch6", Line: 34, Col: 13>
-  <ASSIGN, "=", Line: 34, Col: 17>
-  <CHAR, "'\\'", Line: 34, Col: 19>
-  <SEMICOLON, ";", Line: 34, Col: 23>
-  <DECLARE, "declare", Line: 35, Col: 5>
-  <IDENTIFIER, "Ch7", Line: 35, Col: 13>
-  <ASSIGN, "=", Line: 35, Col: 17>
-  <CHAR, "'\''", Line: 35, Col: 19>
-  <SEMICOLON, ";", Line: 35, Col: 23>
+  <OUTPUT, "output", Line: 34, Col: 5>
+  <IDENTIFIER, "Ch1", Line: 34, Col: 12>
+  <SEMICOLON, ";", Line: 34, Col: 15>
+  <OUTPUT, "output", Line: 35, Col: 5>
+  <IDENTIFIER, "Ch2", Line: 35, Col: 12>
+  <SEMICOLON, ";", Line: 35, Col: 15>
+  <OUTPUT, "output", Line: 36, Col: 5>
+  <IDENTIFIER, "Ch3", Line: 36, Col: 12>
+  <SEMICOLON, ";", Line: 36, Col: 15>
   <OUTPUT, "output", Line: 37, Col: 5>
-  <IDENTIFIER, "Ch1", Line: 37, Col: 12>
+  <IDENTIFIER, "Ch4", Line: 37, Col: 12>
   <SEMICOLON, ";", Line: 37, Col: 15>
   <OUTPUT, "output", Line: 38, Col: 5>
-  <IDENTIFIER, "Ch2", Line: 38, Col: 12>
+  <IDENTIFIER, "Ch5", Line: 38, Col: 12>
   <SEMICOLON, ";", Line: 38, Col: 15>
   <OUTPUT, "output", Line: 39, Col: 5>
-  <IDENTIFIER, "Ch3", Line: 39, Col: 12>
+  <IDENTIFIER, "Ch6", Line: 39, Col: 12>
   <SEMICOLON, ";", Line: 39, Col: 15>
   <OUTPUT, "output", Line: 40, Col: 5>
-  <IDENTIFIER, "Ch4", Line: 40, Col: 12>
+  <IDENTIFIER, "Ch7", Line: 40, Col: 12>
   <SEMICOLON, ";", Line: 40, Col: 15>
-  <OUTPUT, "output", Line: 41, Col: 5>
-  <IDENTIFIER, "Ch5", Line: 41, Col: 12>
-  <SEMICOLON, ";", Line: 41, Col: 15>
-  <OUTPUT, "output", Line: 42, Col: 5>
-  <IDENTIFIER, "Ch6", Line: 42, Col: 12>
-  <SEMICOLON, ";", Line: 42, Col: 15>
-  <OUTPUT, "output", Line: 43, Col: 5>
-  <IDENTIFIER, "Ch7", Line: 43, Col: 12>
-  <SEMICOLON, ";", Line: 43, Col: 15>
-  <RBRACE, "}", Line: 44, Col: 1>
-  <FINISH, "finish", Line: 45, Col: 1>
-  <EOF, "EOF", Line: 46, Col: 1>
+  <RBRACE, "}", Line: 41, Col: 1>
+  <FINISH, "finish", Line: 42, Col: 1>
+  <EOF, "EOF", Line: 43, Col: 1>
 ||============================================================||
-||  Total tokens: 117                                          ||
+||  Total tokens: 112                                          ||
 ||============================================================||
 
 ||============================================================||
@@ -728,34 +721,33 @@ string literal"", Line: 15, Col: 21>
 ||============================================================||
 || Name                 Type         Scope        Line   ||
 ||============================================================||
-|| Msg                  unknown      global       5      ||
-|| Escaped              unknown      global       7      ||
-|| Quoted               unknown      global       9      ||
-|| Tabbed               unknown      global       11     ||
-|| Backslash            unknown      global       13     ||
-|| Multi                unknown      global       15     ||
-|| Cr                   unknown      global       19     ||
-|| Msg                  unknown      global       5      ||
-|| Escaped              unknown      global       7      ||
-|| Quoted               unknown      global       9      ||
-|| Tabbed               unknown      global       11     ||
-|| Backslash            unknown      global       13     ||
-|| Multi                unknown      global       15     ||
-|| Cr                   unknown      global       19     ||
-|| Ch1                  unknown      global       29     ||
-|| Ch2                  unknown      global       30     ||
-|| Ch3                  unknown      global       31     ||
-|| Ch4                  unknown      global       32     ||
-|| Ch5                  unknown      global       33     ||
-|| Ch6                  unknown      global       34     ||
-|| Ch7                  unknown      global       35     ||
-|| Ch1                  unknown      global       29     ||
-|| Ch2                  unknown      global       30     ||
-|| Ch3                  unknown      global       31     ||
-|| Ch4                  unknown      global       32     ||
-|| Ch5                  unknown      global       33     ||
-|| Ch6                  unknown      global       34     ||
-|| Ch7                  unknown      global       35     ||
+|| Msg                  N/A          Global       5      ||
+|| Escaped              N/A          Global       7      ||
+|| Quoted               N/A          Global       9      ||
+|| Tabbed               N/A          Global       11     ||
+|| Backslash            N/A          Global       13     ||
+|| Cr                   N/A          Global       16     ||
+|| Msg                  N/A          Global       18     ||
+|| Escaped              N/A          Global       19     ||
+|| Quoted               N/A          Global       20     ||
+|| Tabbed               N/A          Global       21     ||
+|| Backslash            N/A          Global       22     ||
+|| Multi                N/A          Global       23     ||
+|| Cr                   N/A          Global       24     ||
+|| Ch1                  N/A          Global       26     ||
+|| Ch2                  N/A          Global       27     ||
+|| Ch3                  N/A          Global       28     ||
+|| Ch4                  N/A          Global       29     ||
+|| Ch5                  N/A          Global       30     ||
+|| Ch6                  N/A          Global       31     ||
+|| Ch7                  N/A          Global       32     ||
+|| Ch1                  N/A          Global       34     ||
+|| Ch2                  N/A          Global       35     ||
+|| Ch3                  N/A          Global       36     ||
+|| Ch4                  N/A          Global       37     ||
+|| Ch5                  N/A          Global       38     ||
+|| Ch6                  N/A          Global       39     ||
+|| Ch7                  N/A          Global       40     ||
 ||============================================================||
 
 [ErrorHandler] No lexical errors detected.
@@ -787,36 +779,42 @@ string literal"", Line: 15, Col: 21>
   <DECLARE, "declare", Line: 15, Col: 5>
   <IDENTIFIER, "Broken", Line: 15, Col: 13>
   <ASSIGN, "=", Line: 15, Col: 20>
-  <STRING, ""this string never ends;
-
-    ## Error 5: invalid escape sequence in string
-    declare Esc = "", Line: 15, Col: 22>
-  <ERROR, "bad", Line: 18, Col: 20>
-  <ERROR, "\", Line: 18, Col: 24>
-  <ERROR, "x", Line: 18, Col: 25>
-  <ERROR, "escape", Line: 18, Col: 27>
-  <ERROR, "";
-
-    ## Error 6: identifier too long (over 31 chars)
-    declare Abcdefghijklmnopqrstuvwxyz_extra = 99;
-
-    ## Error 7: unclosed char literal
-    declare Ch = '
-
-    ## Error 8: empty char literal
-    declare Empty = '';
-
-    ## Error 9: multi-char inside char literal
-    declare Multi = 'ab';
-
-    ## Error 10: another illegal character
-    declare Tilde = ~5;
-}
-finish
-", Line: 18, Col: 33>
+  <ERROR, ""this string never ends;", Line: 15, Col: 22>
+  <DECLARE, "declare", Line: 18, Col: 5>
+  <IDENTIFIER, "Esc", Line: 18, Col: 13>
+  <ASSIGN, "=", Line: 18, Col: 17>
+  <ERROR, ""bad \x escape"", Line: 18, Col: 19>
+  <SEMICOLON, ";", Line: 18, Col: 34>
+  <DECLARE, "declare", Line: 21, Col: 5>
+  <ERROR, "Abcdefghijklmnopqrstuvwxyz_extra", Line: 21, Col: 13>
+  <ASSIGN, "=", Line: 21, Col: 46>
+  <INTEGER, "99", Line: 21, Col: 48>
+  <SEMICOLON, ";", Line: 21, Col: 50>
+  <DECLARE, "declare", Line: 24, Col: 5>
+  <IDENTIFIER, "Ch", Line: 24, Col: 13>
+  <ASSIGN, "=", Line: 24, Col: 16>
+  <ERROR, "'", Line: 24, Col: 18>
+  <DECLARE, "declare", Line: 27, Col: 5>
+  <IDENTIFIER, "Empty", Line: 27, Col: 13>
+  <ASSIGN, "=", Line: 27, Col: 19>
+  <ERROR, "''", Line: 27, Col: 21>
+  <SEMICOLON, ";", Line: 27, Col: 23>
+  <DECLARE, "declare", Line: 30, Col: 5>
+  <IDENTIFIER, "Multi", Line: 30, Col: 13>
+  <ASSIGN, "=", Line: 30, Col: 19>
+  <ERROR, "'ab'", Line: 30, Col: 21>
+  <SEMICOLON, ";", Line: 30, Col: 25>
+  <DECLARE, "declare", Line: 33, Col: 5>
+  <IDENTIFIER, "Tilde", Line: 33, Col: 13>
+  <ASSIGN, "=", Line: 33, Col: 19>
+  <ERROR, "~", Line: 33, Col: 21>
+  <INTEGER, "5", Line: 33, Col: 22>
+  <SEMICOLON, ";", Line: 33, Col: 23>
+  <RBRACE, "}", Line: 34, Col: 1>
+  <FINISH, "finish", Line: 35, Col: 1>
   <EOF, "EOF", Line: 36, Col: 1>
 ||============================================================||
-||  Total tokens: 29                                           ||
+||  Total tokens: 56                                           ||
 ||============================================================||
 
 ||============================================================||
@@ -824,42 +822,31 @@ finish
 ||============================================================||
 || Name                 Type         Scope        Line   ||
 ||============================================================||
-|| Count                unknown      global       9      ||
-|| Bad_float            unknown      global       12     ||
-|| Broken               unknown      global       15     ||
+|| Count                N/A          Global       9      ||
+|| Bad_float            N/A          Global       12     ||
+|| Broken               N/A          Global       15     ||
+|| Esc                  N/A          Global       18     ||
+|| Ch                   N/A          Global       24     ||
+|| Empty                N/A          Global       27     ||
+|| Multi                N/A          Global       30     ||
+|| Tilde                N/A          Global       33     ||
 ||============================================================||
 
 ||============================================================||
 ||                     LEXICAL ERRORS                         ||
 ||============================================================||
-||  Error: [Invalid Identifier] at Line 6, Col 13: Lexeme "invalidVar" - Identifiers must start with an uppercase letter [A-Z].
-||  Error: [Invalid Character] at Line 9, Col 24: Lexeme "@" - Character is not part of the language alphabet.
-||  Error: [Malformed Literal] at Line 12, Col 25: Lexeme "3.1234567" - Float literal exceeds maximum of 6 decimal digits.
-||  Error: [Invalid Identifier] at Line 18, Col 20: Lexeme "bad" - Identifiers must start with an uppercase letter [A-Z].
-||  Error: [Invalid Character] at Line 18, Col 24: Lexeme "\" - Character is not part of the language alphabet.
-||  Error: [Invalid Identifier] at Line 18, Col 25: Lexeme "x" - Identifiers must start with an uppercase letter [A-Z].
-||  Error: [Invalid Identifier] at Line 18, Col 27: Lexeme "escape" - Identifiers must start with an uppercase letter [A-Z].
-||  Error: [Unclosed String] at Line 18, Col 33: Lexeme "";
-
-    ## Error 6: identifier too long (over 31 chars)
-    declare Abcdefghijklmnopqrstuvwxyz_extra = 99;
-
-    ## Error 7: unclosed char literal
-    declare Ch = '
-
-    ## Error 8: empty char literal
-    declare Empty = '';
-
-    ## Error 9: multi-char inside char literal
-    declare Multi = 'ab';
-
-    ## Error 10: another illegal character
-    declare Tilde = ~5;
-}
-finish
-" - String literal was never terminated.
+||  <ERROR, "invalidVar", Line: 6, Col: 13>
+||  <ERROR, "@", Line: 9, Col: 24>
+||  <ERROR, "3.1234567", Line: 12, Col: 25>
+||  <ERROR, ""this string never ends;", Line: 15, Col: 22>
+||  <ERROR, ""bad \x escape"", Line: 18, Col: 19>
+||  <ERROR, "Abcdefghijklmnopqrstuvwxyz_extra", Line: 21, Col: 13>
+||  <ERROR, "'", Line: 24, Col: 18>
+||  <ERROR, "''", Line: 27, Col: 21>
+||  <ERROR, "'ab'", Line: 30, Col: 21>
+||  <ERROR, "~", Line: 33, Col: 21>
 ||============================================================||
-||  Total errors: 8                                            ||
+||  Total errors: 10                                           ||
 ||============================================================||
 
 
@@ -929,16 +916,16 @@ finish
 ||============================================================||
 || Name                 Type         Scope        Line   ||
 ||============================================================||
-|| Count                unknown      global       7      ||
-|| Count                unknown      global       7      ||
-|| Count                unknown      global       7      ||
-|| Count                unknown      global       7      ||
-|| Val                  unknown      global       22     ||
-|| Count                unknown      global       7      ||
-|| Val                  unknown      global       22     ||
-|| Count                unknown      global       7      ||
-|| Count                unknown      global       7      ||
-|| Count                unknown      global       7      ||
+|| Count                N/A          Global       7      ||
+|| Count                N/A          Global       15     ||
+|| Count                N/A          Global       15     ||
+|| Count                N/A          Global       18     ||
+|| Val                  N/A          Global       22     ||
+|| Count                N/A          Global       29     ||
+|| Val                  N/A          Global       29     ||
+|| Count                N/A          Global       31     ||
+|| Count                N/A          Global       33     ||
+|| Count                N/A          Global       37     ||
 ||============================================================||
 
 [ErrorHandler] No lexical errors detected.

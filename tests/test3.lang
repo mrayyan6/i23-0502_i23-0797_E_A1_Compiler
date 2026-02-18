@@ -12,9 +12,6 @@ start
 
     declare Backslash = "Path\\File";
 
-    declare Multi = "This is
-a multi-line
-string literal";
 
     declare Cr = "Carriage\rReturn";
 
